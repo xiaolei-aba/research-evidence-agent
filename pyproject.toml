@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools==75.8.0"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "research-evidence-agent"
+version = "0.2.0"
+description = "Evidence-grounded research agent for AI technical knowledge"
+requires-python = ">=3.11"
+dependencies = []
+[tool.setuptools.packages.find]
+where = ["src"]

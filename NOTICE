@@ -1,0 +1,50 @@
+ResearchEvidence Agent
+Copyright 2026 xiaolei-aba for rights-cleared project contributions.
+Project contributions are licensed under Apache-2.0; upstream rights are retained.
+Implementation, tests, execution and reporting involved Codex assistance;
+this does not assert independent handwritten authorship of the entire codebase.
+
+This project adapts/reimplements QASPER and SciFact scoring rules for a frozen
+project task schema. Upstream sources and licenses:
+
+QASPER evaluator: AllenAI, allenai/qasper-led-baseline,
+revision afd0fb96bf78ce8cd8157639c6f6a6995e4f9089, scripts/evaluator.py.
+Code license: Apache License 2.0. The pinned upstream tree contains no NOTICE file.
+https://github.com/allenai/qasper-led-baseline/tree/afd0fb96bf78ce8cd8157639c6f6a6995e4f9089
+
+SciFact evaluator: AllenAI, allenai/scifact,
+revision 68b98a56d93e0f9da0d2aab4e6c3294699a0f72e,
+verisci/evaluate/lib/metrics.py. Code license: Apache License 2.0.
+The pinned upstream tree contains no NOTICE file.
+https://github.com/allenai/scifact/tree/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e
+
+QASPER identifies its answer-normalization/token-F1 lineage as SQuAD v1.1.
+Acknowledgement: SQuAD project authors. The verified SQuAD-explorer repository
+license is MIT, Copyright (c) 2020 Pranav Rajpurkar, at revision
+eee5fdbf62f8613a7812b03419e6b29617b74fd1. Its copyright and full permission text
+are retained conservatively in LICENSES/SQuAD-MIT.txt. This statement does not
+claim verification of the historical complete SQuAD v1.1 script's license.
+https://github.com/rajpurkar/SQuAD-explorer/tree/eee5fdbf62f8613a7812b03419e6b29617b74fd1
+
+Project adaptations: compact answer normalization; algebraically equivalent F1;
+project task/reference schema; dictionary-based SciFact count primitives;
+explicit failure accounting, claim-level adaptation and retrieval metrics.
+The public distribution provenance header changes no scorer behavior.
+
+Benchmark text, annotations/Gold, model weights, backend/CUDA binaries and
+complete upstream evaluator programs are not included in this distribution.
+Their licenses are separate; this project's license does not relicense them.
+No upstream endorsement is implied.
+
+Research dependencies and benchmark acknowledgements (not bundled):
+- Official Qwen2.5-1.5B-Instruct GGUF, Apache-2.0,
+  revision 91cad51170dc346986eccefdc2dd33a9da36ead9.
+  https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/tree/91cad51170dc346986eccefdc2dd33a9da36ead9
+- llama.cpp b9757, MIT, commit 37957e8531bcd2e5f98233d6ecc864f2b76e6b8b.
+  https://github.com/ggml-org/llama.cpp/tree/37957e8531bcd2e5f98233d6ecc864f2b76e6b8b
+  CUDA components have separate NVIDIA terms; no executable or DLL is included.
+- QASPER metadata lists CC-BY-4.0; underlying papers retain their own rights.
+  https://huggingface.co/datasets/allenai/qasper
+- SciFact claims/annotations: CC-BY-4.0; abstracts: ODC-BY-1.0; code: Apache-2.0.
+  https://github.com/allenai/scifact/blob/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/LICENSE.md
+No dataset payload, Gold, model weights or backend binaries are redistributed.

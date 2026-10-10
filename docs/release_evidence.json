@@ -1,0 +1,2043 @@
+{
+  "B4_Dev_exploratory": {
+    "qasper/B4": {
+      "answer_f1": 0.05675248075181733,
+      "citation_support_rate": null,
+      "complete_usage_n": 36,
+      "evidence_f1": 0.04056437389770723,
+      "evidence_recall_at_5": 0.35344827586206895,
+      "evidence_recall_eligible_n": 29,
+      "evidence_recall_ineligible_n": 7,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 22,
+        "observed_final_citations": 22,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 0,
+      "input_tokens": {
+        "known_n": 36,
+        "mean_known": 3043.6666666666665,
+        "p50": 3045.0,
+        "p95_nearest_rank": 5859,
+        "total_known": 109572,
+        "unknown_n": 0
+      },
+      "insufficient_evidence": 0,
+      "latency_ms": {
+        "known_n": 36,
+        "mean_known": 2789.8888888893352,
+        "p50": 3109.500000005937,
+        "p95_nearest_rank": 3718.9999999973224,
+        "total_known": 100436.00000001607,
+        "unknown_n": 0
+      },
+      "model_calls": {
+        "known_n": 36,
+        "mean_known": 2.361111111111111,
+        "p50": 2.0,
+        "p95_nearest_rank": 4,
+        "total_known": 85,
+        "unknown_n": 0
+      },
+      "n": 36,
+      "output_tokens": {
+        "known_n": 36,
+        "mean_known": 402.6388888888889,
+        "p50": 525.0,
+        "p95_nearest_rank": 550,
+        "total_known": 14495,
+        "unknown_n": 0
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "reported_input_tokens_total": 109572,
+      "reported_output_tokens_total": 14495,
+      "runtime_error_counts": {
+        "incomplete_or_refused_completion": 16,
+        "input_token_budget_exceeded": 7,
+        "total_token_reservation_exceeded": 1
+      },
+      "runtime_failed": 24,
+      "runtime_failed_rate": 0.6666666666666666,
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "status_counts": {
+        "completed": 12,
+        "failed": 24
+      },
+      "tool_calls": {
+        "known_n": 36,
+        "mean_known": 8.666666666666666,
+        "p50": 6.0,
+        "p95_nearest_rank": 12,
+        "total_known": 312,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    },
+    "qasper/B4off": {
+      "answer_f1": 0.0538285041436302,
+      "citation_support_rate": null,
+      "complete_usage_n": 36,
+      "evidence_f1": 0.04056437389770723,
+      "evidence_recall_at_5": 0.35344827586206895,
+      "evidence_recall_eligible_n": 29,
+      "evidence_recall_ineligible_n": 7,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 20,
+        "observed_final_citations": 20,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 0,
+      "input_tokens": {
+        "known_n": 36,
+        "mean_known": 2311.527777777778,
+        "p50": 2056.0,
+        "p95_nearest_rank": 5859,
+        "total_known": 83215,
+        "unknown_n": 0
+      },
+      "insufficient_evidence": 0,
+      "latency_ms": {
+        "known_n": 36,
+        "mean_known": 2175.3055555568103,
+        "p50": 2883.00000000163,
+        "p95_nearest_rank": 3750.0,
+        "total_known": 78311.00000004517,
+        "unknown_n": 0
+      },
+      "model_calls": {
+        "known_n": 36,
+        "mean_known": 2.0555555555555554,
+        "p50": 2.0,
+        "p95_nearest_rank": 4,
+        "total_known": 74,
+        "unknown_n": 0
+      },
+      "n": 36,
+      "output_tokens": {
+        "known_n": 36,
+        "mean_known": 300.52777777777777,
+        "p50": 356.5,
+        "p95_nearest_rank": 541,
+        "total_known": 10819,
+        "unknown_n": 0
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "reported_input_tokens_total": 83215,
+      "reported_output_tokens_total": 10819,
+      "runtime_error_counts": {
+        "incomplete_or_refused_completion": 12,
+        "input_token_budget_exceeded": 14
+      },
+      "runtime_failed": 26,
+      "runtime_failed_rate": 0.7222222222222222,
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "status_counts": {
+        "completed": 10,
+        "failed": 26
+      },
+      "tool_calls": {
+        "known_n": 36,
+        "mean_known": 8.666666666666666,
+        "p50": 6.0,
+        "p95_nearest_rank": 12,
+        "total_known": 312,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    },
+    "scifact/B4": {
+      "abstract": {
+        "counts": {
+          "correct": 0,
+          "relevant": 29,
+          "retrieved": 1
+        },
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "abstract_label_only": {
+        "counts": {
+          "correct": 0,
+          "relevant": 29,
+          "retrieved": 1
+        },
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "accuracy": 0.025,
+      "citation_support_rate": null,
+      "complete_usage_n": 40,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 1,
+        "observed_final_citations": 1,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 0,
+      "input_tokens": {
+        "known_n": 40,
+        "mean_known": 6044.95,
+        "p50": 7050.5,
+        "p95_nearest_rank": 9260,
+        "total_known": 241798,
+        "unknown_n": 0
+      },
+      "insufficient_evidence": 4,
+      "latency_ms": {
+        "known_n": 40,
+        "mean_known": 2855.8250000001863,
+        "p50": 2984.500000005937,
+        "p95_nearest_rank": 4266.00000000326,
+        "total_known": 114233.00000000745,
+        "unknown_n": 0
+      },
+      "macro_f1": 0.04761904761904762,
+      "model_calls": {
+        "known_n": 40,
+        "mean_known": 4.05,
+        "p50": 4.0,
+        "p95_nearest_rank": 6,
+        "total_known": 162,
+        "unknown_n": 0
+      },
+      "n": 40,
+      "ndcg_at_k": {
+        "eligible_n": 27,
+        "ineligible_n": 13,
+        "k": 5,
+        "mean": 0.7543421158496219
+      },
+      "output_tokens": {
+        "known_n": 40,
+        "mean_known": 208.1,
+        "p50": 177.5,
+        "p95_nearest_rank": 408,
+        "total_known": 8324,
+        "unknown_n": 0
+      },
+      "per_class": {
+        "CONTRADICT": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "NEI": {
+          "f1": 0.14285714285714288,
+          "precision": 1.0,
+          "recall": 0.07692307692307693
+        },
+        "SUPPORT": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        }
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "recall_at_k": {
+        "eligible_n": 27,
+        "ineligible_n": 13,
+        "k": 5,
+        "mean": 0.8518518518518519
+      },
+      "reciprocal_rank_at_k": {
+        "eligible_n": 27,
+        "ineligible_n": 13,
+        "k": 5,
+        "mean": 0.7253086419753086
+      },
+      "reported_input_tokens_total": 241798,
+      "reported_output_tokens_total": 8324,
+      "runtime_error_counts": {
+        "empty_list": 5,
+        "input_token_budget_exceeded": 4,
+        "total_token_reservation_exceeded": 17
+      },
+      "runtime_failed": 26,
+      "runtime_failed_rate": 0.65,
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "sentence_label": {
+        "counts": {
+          "correct": 0,
+          "relevant": 57,
+          "retrieved": 1
+        },
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "sentence_selection": {
+        "counts": {
+          "correct": 0,
+          "relevant": 57,
+          "retrieved": 1
+        },
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "status_counts": {
+        "completed": 10,
+        "failed": 26,
+        "insufficient_evidence": 4
+      },
+      "tool_calls": {
+        "known_n": 40,
+        "mean_known": 14.85,
+        "p50": 18.0,
+        "p95_nearest_rank": 18,
+        "total_known": 594,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    },
+    "scifact/B4off": {
+      "abstract": {
+        "counts": {
+          "correct": 0,
+          "relevant": 29,
+          "retrieved": 1
+        },
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "abstract_label_only": {
+        "counts": {
+          "correct": 1,
+          "relevant": 29,
+          "retrieved": 1
+        },
+        "f1": 0.06666666666666667,
+        "precision": 1.0,
+        "recall": 0.034482758620689655
+      },
+      "accuracy": 0.025,
+      "citation_support_rate": null,
+      "complete_usage_n": 40,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 3,
+        "observed_final_citations": 3,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 0,
+      "input_tokens": {
+        "known_n": 40,
+        "mean_known": 6600,
+        "p50": 7082.0,
+        "p95_nearest_rank": 7880,
+        "total_known": 264000,
+        "unknown_n": 0
+      },
+      "insufficient_evidence": 2,
+      "latency_ms": {
+        "known_n": 40,
+        "mean_known": 3059.2249999997875,
+        "p50": 3085.5000000010477,
+        "p95_nearest_rank": 4062.999999994645,
+        "total_known": 122368.9999999915,
+        "unknown_n": 0
+      },
+      "macro_f1": 0.044444444444444446,
+      "model_calls": {
+        "known_n": 40,
+        "mean_known": 3.9,
+        "p50": 4.0,
+        "p95_nearest_rank": 5,
+        "total_known": 156,
+        "unknown_n": 0
+      },
+      "n": 40,
+      "ndcg_at_k": {
+        "eligible_n": 27,
+        "ineligible_n": 13,
+        "k": 5,
+        "mean": 0.7543421158496219
+      },
+      "output_tokens": {
+        "known_n": 40,
+        "mean_known": 223.25,
+        "p50": 189.0,
+        "p95_nearest_rank": 373,
+        "total_known": 8930,
+        "unknown_n": 0
+      },
+      "per_class": {
+        "CONTRADICT": {
+          "f1": 0.13333333333333333,
+          "precision": 1.0,
+          "recall": 0.07142857142857142
+        },
+        "NEI": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "SUPPORT": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        }
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "recall_at_k": {
+        "eligible_n": 27,
+        "ineligible_n": 13,
+        "k": 5,
+        "mean": 0.8518518518518519
+      },
+      "reciprocal_rank_at_k": {
+        "eligible_n": 27,
+        "ineligible_n": 13,
+        "k": 5,
+        "mean": 0.7253086419753086
+      },
+      "reported_input_tokens_total": 264000,
+      "reported_output_tokens_total": 8930,
+      "runtime_error_counts": {
+        "empty_list": 1,
+        "incomplete_or_refused_completion": 1,
+        "input_token_budget_exceeded": 30,
+        "total_token_reservation_exceeded": 1
+      },
+      "runtime_failed": 33,
+      "runtime_failed_rate": 0.825,
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "sentence_label": {
+        "counts": {
+          "correct": 0,
+          "relevant": 57,
+          "retrieved": 2
+        },
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "sentence_selection": {
+        "counts": {
+          "correct": 0,
+          "relevant": 57,
+          "retrieved": 2
+        },
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "status_counts": {
+        "completed": 5,
+        "failed": 33,
+        "insufficient_evidence": 2
+      },
+      "tool_calls": {
+        "known_n": 40,
+        "mean_known": 15.9,
+        "p50": 18.0,
+        "p95_nearest_rank": 18,
+        "total_known": 636,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    }
+  },
+  "configurations": {
+    "B1": {
+      "context": 4096,
+      "deadline_seconds": 120,
+      "flags": {
+        "cache": false,
+        "critic": false,
+        "deduplicate": false,
+        "memory": false,
+        "planner": false,
+        "replan": false
+      },
+      "group": "B1",
+      "max_input_tokens": 3072,
+      "max_output_tokens": 512,
+      "max_replans": 1,
+      "max_tools": 18,
+      "optimization": null,
+      "query_packaging": "original query/claim; benchmark instructions in model system message only",
+      "retry_policy": "one transport retry, zero answer/JSON resampling",
+      "seed": 11,
+      "temperature": 0
+    },
+    "B2": {
+      "context": 4096,
+      "deadline_seconds": 120,
+      "flags": {
+        "cache": false,
+        "critic": false,
+        "deduplicate": false,
+        "memory": false,
+        "planner": true,
+        "replan": false
+      },
+      "group": "B2",
+      "max_input_tokens": 3072,
+      "max_output_tokens": 512,
+      "max_replans": 1,
+      "max_tools": 18,
+      "optimization": null,
+      "query_packaging": "original query/claim; benchmark instructions in model system message only",
+      "retry_policy": "one transport retry, zero answer/JSON resampling",
+      "seed": 11,
+      "temperature": 0
+    },
+    "B3": {
+      "context": 4096,
+      "deadline_seconds": 120,
+      "flags": {
+        "cache": false,
+        "critic": true,
+        "deduplicate": false,
+        "memory": true,
+        "planner": true,
+        "replan": true
+      },
+      "group": "B3",
+      "max_input_tokens": 3072,
+      "max_output_tokens": 512,
+      "max_replans": 1,
+      "max_tools": 18,
+      "optimization": null,
+      "query_packaging": "original query/claim; benchmark instructions in model system message only",
+      "retry_policy": "one transport retry, zero answer/JSON resampling",
+      "seed": 11,
+      "temperature": 0
+    },
+    "B4": {
+      "context": 4096,
+      "deadline_seconds": 120,
+      "flags": {
+        "cache": false,
+        "critic": true,
+        "deduplicate": true,
+        "memory": true,
+        "planner": true,
+        "replan": true
+      },
+      "group": "B4",
+      "max_input_tokens": 3072,
+      "max_output_tokens": 512,
+      "max_replans": 1,
+      "max_tools": 18,
+      "optimization": "source_identity_dedup",
+      "query_packaging": "original query/claim; benchmark instructions in model system message only",
+      "retry_policy": "one transport retry, zero answer/JSON resampling",
+      "seed": 11,
+      "temperature": 0
+    },
+    "B4off": {
+      "context": 4096,
+      "deadline_seconds": 120,
+      "flags": {
+        "cache": false,
+        "critic": true,
+        "deduplicate": false,
+        "memory": true,
+        "planner": true,
+        "replan": true
+      },
+      "group": "B4off",
+      "max_input_tokens": 3072,
+      "max_output_tokens": 512,
+      "max_replans": 1,
+      "max_tools": 18,
+      "optimization": null,
+      "query_packaging": "original query/claim; benchmark instructions in model system message only",
+      "retry_policy": "one transport retry, zero answer/JSON resampling",
+      "seed": 11,
+      "temperature": 0
+    }
+  },
+  "final": {
+    "qasper/B1": {
+      "answer_f1": 0.16724562192323114,
+      "citation_support_rate": null,
+      "complete_usage_n": 108,
+      "evidence_f1": 0.13450176366843034,
+      "evidence_recall_at_5": 0.4582649151614669,
+      "evidence_recall_eligible_n": 87,
+      "evidence_recall_ineligible_n": 21,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 178,
+        "observed_final_citations": 178,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 0,
+      "input_tokens": {
+        "known_n": 108,
+        "mean_known": 1823.1296296296296,
+        "p50": 1792.5,
+        "p95_nearest_rank": 2247,
+        "total_known": 196898,
+        "unknown_n": 0
+      },
+      "insufficient_evidence": 0,
+      "latency_ms": {
+        "known_n": 108,
+        "mean_known": 2214.43518518626,
+        "p50": 2460.5000000010477,
+        "p95_nearest_rank": 3062.000000005355,
+        "total_known": 239159.00000011607,
+        "unknown_n": 0
+      },
+      "model_calls": {
+        "known_n": 108,
+        "mean_known": 1,
+        "p50": 1.0,
+        "p95_nearest_rank": 1,
+        "total_known": 108,
+        "unknown_n": 0
+      },
+      "n": 108,
+      "output_tokens": {
+        "known_n": 108,
+        "mean_known": 340.72222222222223,
+        "p50": 390.5,
+        "p95_nearest_rank": 512,
+        "total_known": 36798,
+        "unknown_n": 0
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "reported_input_tokens_total": 196898,
+      "reported_output_tokens_total": 36798,
+      "runtime_error_counts": {
+        "empty_list": 1,
+        "incomplete_or_refused_completion": 38
+      },
+      "runtime_failed": 39,
+      "runtime_failed_rate": 0.3611111111111111,
+      "sampled_resources": {
+        "maximum_temperature_c": 71,
+        "minimum_available_ram_bytes": 5693034496,
+        "peak_device_used_mib": 1197
+      },
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "status_counts": {
+        "completed": 69,
+        "failed": 39
+      },
+      "tool_calls": {
+        "known_n": 108,
+        "mean_known": 5.962962962962963,
+        "p50": 6.0,
+        "p95_nearest_rank": 6,
+        "total_known": 644,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    },
+    "qasper/B4": {
+      "answer_f1": 0.13451819681752872,
+      "citation_support_rate": null,
+      "complete_usage_n": 108,
+      "evidence_f1": 0.12206055261610817,
+      "evidence_recall_at_5": 0.4547071702244116,
+      "evidence_recall_eligible_n": 87,
+      "evidence_recall_ineligible_n": 21,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 123,
+        "observed_final_citations": 123,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 0,
+      "input_tokens": {
+        "known_n": 108,
+        "mean_known": 3521.222222222222,
+        "p50": 3736.0,
+        "p95_nearest_rank": 6027,
+        "total_known": 380292,
+        "unknown_n": 0
+      },
+      "insufficient_evidence": 0,
+      "latency_ms": {
+        "known_n": 108,
+        "mean_known": 2804.851851851574,
+        "p50": 3156.0000000026776,
+        "p95_nearest_rank": 3733.9999999967404,
+        "total_known": 302923.99999996996,
+        "unknown_n": 0
+      },
+      "model_calls": {
+        "known_n": 108,
+        "mean_known": 2.5277777777777777,
+        "p50": 3.0,
+        "p95_nearest_rank": 3,
+        "total_known": 273,
+        "unknown_n": 0
+      },
+      "n": 108,
+      "output_tokens": {
+        "known_n": 108,
+        "mean_known": 380.5462962962963,
+        "p50": 454.5,
+        "p95_nearest_rank": 559,
+        "total_known": 41099,
+        "unknown_n": 0
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "reported_input_tokens_total": 380292,
+      "reported_output_tokens_total": 41099,
+      "runtime_error_counts": {
+        "incomplete_or_refused_completion": 36,
+        "input_token_budget_exceeded": 14,
+        "total_token_reservation_exceeded": 3
+      },
+      "runtime_failed": 53,
+      "runtime_failed_rate": 0.49074074074074076,
+      "sampled_resources": {
+        "maximum_temperature_c": 72,
+        "minimum_available_ram_bytes": 5638033408,
+        "peak_device_used_mib": 1197
+      },
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "status_counts": {
+        "completed": 55,
+        "failed": 53
+      },
+      "tool_calls": {
+        "known_n": 108,
+        "mean_known": 8.814814814814815,
+        "p50": 6.0,
+        "p95_nearest_rank": 12,
+        "total_known": 952,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    },
+    "qasper/B4off": {
+      "answer_f1": 0.074676340587522,
+      "citation_support_rate": null,
+      "complete_usage_n": 108,
+      "evidence_f1": 0.08708112874779542,
+      "evidence_recall_at_5": 0.4547071702244116,
+      "evidence_recall_eligible_n": 87,
+      "evidence_recall_ineligible_n": 21,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 97,
+        "observed_final_citations": 97,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 0,
+      "input_tokens": {
+        "known_n": 108,
+        "mean_known": 2437.759259259259,
+        "p50": 2366.0,
+        "p95_nearest_rank": 4698,
+        "total_known": 263278,
+        "unknown_n": 0
+      },
+      "insufficient_evidence": 0,
+      "latency_ms": {
+        "known_n": 108,
+        "mean_known": 2087.9259259263226,
+        "p50": 2249.999999992724,
+        "p95_nearest_rank": 3733.9999999967404,
+        "total_known": 225496.00000004284,
+        "unknown_n": 0
+      },
+      "model_calls": {
+        "known_n": 108,
+        "mean_known": 2.0925925925925926,
+        "p50": 2.0,
+        "p95_nearest_rank": 3,
+        "total_known": 226,
+        "unknown_n": 0
+      },
+      "n": 108,
+      "output_tokens": {
+        "known_n": 108,
+        "mean_known": 269.85185185185185,
+        "p50": 250.0,
+        "p95_nearest_rank": 546,
+        "total_known": 29144,
+        "unknown_n": 0
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "reported_input_tokens_total": 263278,
+      "reported_output_tokens_total": 29144,
+      "runtime_error_counts": {
+        "incomplete_or_refused_completion": 21,
+        "input_token_budget_exceeded": 47
+      },
+      "runtime_failed": 68,
+      "runtime_failed_rate": 0.6296296296296297,
+      "sampled_resources": {
+        "maximum_temperature_c": 71,
+        "minimum_available_ram_bytes": 5702402048,
+        "peak_device_used_mib": 1197
+      },
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "status_counts": {
+        "completed": 40,
+        "failed": 68
+      },
+      "tool_calls": {
+        "known_n": 108,
+        "mean_known": 8.75925925925926,
+        "p50": 6.0,
+        "p95_nearest_rank": 12,
+        "total_known": 946,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    },
+    "scifact/B1": {
+      "abstract": {
+        "counts": {
+          "correct": 5,
+          "relevant": 72,
+          "retrieved": 35
+        },
+        "f1": 0.09345794392523364,
+        "precision": 0.14285714285714285,
+        "recall": 0.06944444444444445
+      },
+      "abstract_label_only": {
+        "counts": {
+          "correct": 5,
+          "relevant": 72,
+          "retrieved": 35
+        },
+        "f1": 0.09345794392523364,
+        "precision": 0.14285714285714285,
+        "recall": 0.06944444444444445
+      },
+      "accuracy": 0.1,
+      "citation_support_rate": null,
+      "complete_usage_n": 100,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 71,
+        "observed_final_citations": 71,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 0,
+      "input_tokens": {
+        "known_n": 100,
+        "mean_known": 1341.86,
+        "p50": 1330.0,
+        "p95_nearest_rank": 1434,
+        "total_known": 134186,
+        "unknown_n": 0
+      },
+      "insufficient_evidence": 0,
+      "latency_ms": {
+        "known_n": 100,
+        "mean_known": 898.1700000003912,
+        "p50": 703.0000000086147,
+        "p95_nearest_rank": 2202.999999994063,
+        "total_known": 89817.00000003912,
+        "unknown_n": 0
+      },
+      "macro_f1": 0.15719649561952442,
+      "model_calls": {
+        "known_n": 100,
+        "mean_known": 1,
+        "p50": 1.0,
+        "p95_nearest_rank": 1,
+        "total_known": 100,
+        "unknown_n": 0
+      },
+      "n": 100,
+      "ndcg_at_k": {
+        "eligible_n": 67,
+        "ineligible_n": 33,
+        "k": 5,
+        "mean": 0.7438387484007176
+      },
+      "output_tokens": {
+        "known_n": 100,
+        "mean_known": 60.91,
+        "p50": 16.0,
+        "p95_nearest_rank": 333,
+        "total_known": 6091,
+        "unknown_n": 0
+      },
+      "per_class": {
+        "CONTRADICT": {
+          "f1": 0.21276595744680854,
+          "precision": 0.38461538461538464,
+          "recall": 0.14705882352941177
+        },
+        "NEI": {
+          "f1": 0.2,
+          "precision": 0.5714285714285714,
+          "recall": 0.12121212121212122
+        },
+        "SUPPORT": {
+          "f1": 0.05882352941176471,
+          "precision": 1.0,
+          "recall": 0.030303030303030304
+        }
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "recall_at_k": {
+        "eligible_n": 67,
+        "ineligible_n": 33,
+        "k": 5,
+        "mean": 0.8159203980099502
+      },
+      "reciprocal_rank_at_k": {
+        "eligible_n": 67,
+        "ineligible_n": 33,
+        "k": 5,
+        "mean": 0.7243781094527363
+      },
+      "reported_input_tokens_total": 134186,
+      "reported_output_tokens_total": 6091,
+      "runtime_error_counts": {
+        "empty_list": 3
+      },
+      "runtime_failed": 3,
+      "runtime_failed_rate": 0.03,
+      "sampled_resources": {
+        "maximum_temperature_c": 72,
+        "minimum_available_ram_bytes": 5706096640,
+        "peak_device_used_mib": 1197
+      },
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "sentence_label": {
+        "counts": {
+          "correct": 5,
+          "relevant": 125,
+          "retrieved": 66
+        },
+        "f1": 0.05235602094240838,
+        "precision": 0.07575757575757576,
+        "recall": 0.04
+      },
+      "sentence_selection": {
+        "counts": {
+          "correct": 8,
+          "relevant": 125,
+          "retrieved": 66
+        },
+        "f1": 0.08376963350785341,
+        "precision": 0.12121212121212122,
+        "recall": 0.064
+      },
+      "status_counts": {
+        "completed": 97,
+        "failed": 3
+      },
+      "tool_calls": {
+        "known_n": 100,
+        "mean_known": 6,
+        "p50": 6.0,
+        "p95_nearest_rank": 6,
+        "total_known": 600,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    },
+    "scifact/B4": {
+      "abstract": {
+        "counts": {
+          "correct": 1,
+          "relevant": 72,
+          "retrieved": 9
+        },
+        "f1": 0.024691358024691357,
+        "precision": 0.1111111111111111,
+        "recall": 0.013888888888888888
+      },
+      "abstract_label_only": {
+        "counts": {
+          "correct": 2,
+          "relevant": 72,
+          "retrieved": 9
+        },
+        "f1": 0.04938271604938271,
+        "precision": 0.2222222222222222,
+        "recall": 0.027777777777777776
+      },
+      "accuracy": 0.02,
+      "citation_support_rate": null,
+      "complete_usage_n": 100,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 18,
+        "observed_final_citations": 18,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 0,
+      "input_tokens": {
+        "known_n": 100,
+        "mean_known": 6906.45,
+        "p50": 7344.0,
+        "p95_nearest_rank": 9161,
+        "total_known": 690645,
+        "unknown_n": 0
+      },
+      "insufficient_evidence": 13,
+      "latency_ms": {
+        "known_n": 100,
+        "mean_known": 3205.5699999998615,
+        "p50": 3203.000000001339,
+        "p95_nearest_rank": 4389.999999999418,
+        "total_known": 320556.99999998615,
+        "unknown_n": 0
+      },
+      "macro_f1": 0.03756613756613757,
+      "model_calls": {
+        "known_n": 100,
+        "mean_known": 4.39,
+        "p50": 5.0,
+        "p95_nearest_rank": 6,
+        "total_known": 439,
+        "unknown_n": 0
+      },
+      "n": 100,
+      "ndcg_at_k": {
+        "eligible_n": 67,
+        "ineligible_n": 33,
+        "k": 5,
+        "mean": 0.6920149722057639
+      },
+      "output_tokens": {
+        "known_n": 100,
+        "mean_known": 241.18,
+        "p50": 205.5,
+        "p95_nearest_rank": 460,
+        "total_known": 24118,
+        "unknown_n": 0
+      },
+      "per_class": {
+        "CONTRADICT": {
+          "f1": 0.05555555555555555,
+          "precision": 0.5,
+          "recall": 0.029411764705882353
+        },
+        "NEI": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "SUPPORT": {
+          "f1": 0.05714285714285715,
+          "precision": 0.5,
+          "recall": 0.030303030303030304
+        }
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "recall_at_k": {
+        "eligible_n": 67,
+        "ineligible_n": 33,
+        "k": 5,
+        "mean": 0.7599502487562189
+      },
+      "reciprocal_rank_at_k": {
+        "eligible_n": 67,
+        "ineligible_n": 33,
+        "k": 5,
+        "mean": 0.6751243781094527
+      },
+      "reported_input_tokens_total": 690645,
+      "reported_output_tokens_total": 24118,
+      "runtime_error_counts": {
+        "empty_list": 4,
+        "incomplete_or_refused_completion": 1,
+        "input_token_budget_exceeded": 11,
+        "total_token_reservation_exceeded": 55
+      },
+      "runtime_failed": 71,
+      "runtime_failed_rate": 0.71,
+      "sampled_resources": {
+        "maximum_temperature_c": 72,
+        "minimum_available_ram_bytes": 5685071872,
+        "peak_device_used_mib": 1197
+      },
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "sentence_label": {
+        "counts": {
+          "correct": 1,
+          "relevant": 125,
+          "retrieved": 17
+        },
+        "f1": 0.014084507042253523,
+        "precision": 0.058823529411764705,
+        "recall": 0.008
+      },
+      "sentence_selection": {
+        "counts": {
+          "correct": 1,
+          "relevant": 125,
+          "retrieved": 17
+        },
+        "f1": 0.014084507042253523,
+        "precision": 0.058823529411764705,
+        "recall": 0.008
+      },
+      "status_counts": {
+        "completed": 16,
+        "failed": 71,
+        "insufficient_evidence": 13
+      },
+      "tool_calls": {
+        "known_n": 100,
+        "mean_known": 16.14,
+        "p50": 18.0,
+        "p95_nearest_rank": 18,
+        "total_known": 1614,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    },
+    "scifact/B4off": {
+      "abstract": {
+        "counts": {
+          "correct": 0,
+          "relevant": 72,
+          "retrieved": 1
+        },
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "abstract_label_only": {
+        "counts": {
+          "correct": 0,
+          "relevant": 72,
+          "retrieved": 1
+        },
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "accuracy": 0.0,
+      "citation_support_rate": null,
+      "complete_usage_n": 100,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 5,
+        "observed_final_citations": 5,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 0,
+      "input_tokens": {
+        "known_n": 100,
+        "mean_known": 6608.63,
+        "p50": 7187.5,
+        "p95_nearest_rank": 7876,
+        "total_known": 660863,
+        "unknown_n": 0
+      },
+      "insufficient_evidence": 3,
+      "latency_ms": {
+        "known_n": 100,
+        "mean_known": 3098.5999999998603,
+        "p50": 3125.0,
+        "p95_nearest_rank": 3952.999999994063,
+        "total_known": 309859.99999998603,
+        "unknown_n": 0
+      },
+      "macro_f1": 0.0,
+      "model_calls": {
+        "known_n": 100,
+        "mean_known": 3.83,
+        "p50": 4.0,
+        "p95_nearest_rank": 5,
+        "total_known": 383,
+        "unknown_n": 0
+      },
+      "n": 100,
+      "ndcg_at_k": {
+        "eligible_n": 67,
+        "ineligible_n": 33,
+        "k": 5,
+        "mean": 0.6920149722057639
+      },
+      "output_tokens": {
+        "known_n": 100,
+        "mean_known": 236.87,
+        "p50": 199.5,
+        "p95_nearest_rank": 546,
+        "total_known": 23687,
+        "unknown_n": 0
+      },
+      "per_class": {
+        "CONTRADICT": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "NEI": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "SUPPORT": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        }
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "recall_at_k": {
+        "eligible_n": 67,
+        "ineligible_n": 33,
+        "k": 5,
+        "mean": 0.7599502487562189
+      },
+      "reciprocal_rank_at_k": {
+        "eligible_n": 67,
+        "ineligible_n": 33,
+        "k": 5,
+        "mean": 0.6751243781094527
+      },
+      "reported_input_tokens_total": 660863,
+      "reported_output_tokens_total": 23687,
+      "runtime_error_counts": {
+        "empty_list": 1,
+        "incomplete_or_refused_completion": 5,
+        "input_token_budget_exceeded": 80,
+        "total_token_reservation_exceeded": 3
+      },
+      "runtime_failed": 89,
+      "runtime_failed_rate": 0.89,
+      "sampled_resources": {
+        "maximum_temperature_c": 72,
+        "minimum_available_ram_bytes": 5691043840,
+        "peak_device_used_mib": 1197
+      },
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "sentence_label": {
+        "counts": {
+          "correct": 0,
+          "relevant": 125,
+          "retrieved": 1
+        },
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "sentence_selection": {
+        "counts": {
+          "correct": 1,
+          "relevant": 125,
+          "retrieved": 1
+        },
+        "f1": 0.015873015873015872,
+        "precision": 1.0,
+        "recall": 0.008
+      },
+      "status_counts": {
+        "completed": 8,
+        "failed": 89,
+        "insufficient_evidence": 3
+      },
+      "tool_calls": {
+        "known_n": 100,
+        "mean_known": 16.38,
+        "p50": 18.0,
+        "p95_nearest_rank": 18,
+        "total_known": 1638,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    }
+  },
+  "independent_recomputation_requires_local_Gold_predictions_and_manifests": true,
+  "input_source_sha256": "106f2de939770df44b30dd297cc02bb9a0e8756a59b907e34573470030479144",
+  "limits": [
+    "Public QASPER selected text-locatable subset; SciFact official-dev Gold as held-out Final, not leaderboard test.",
+    "Single seed 11; public pretraining exposure unknown; no independent human citation support review.",
+    "Final failure outcomes retained in fixed denominators; insufficient_evidence reported separately.",
+    "Original cache-on/cache-off Dev efficiency remains stratified, never a matched latency improvement claim.",
+    "Unknown usage is not zero; reported partial tokens are separated from known-complete usage.",
+    "Warm task latency includes worker startup/corpus preparation/native token RPC; cold load is separate.",
+    "Evidence count-based metrics are frozen benchmark proxies, not human citation accuracy.",
+    "No post-Final model, Prompt, parameter, scorer, Gold or strategy selection."
+  ],
+  "measurement_rules": {
+    "bootstrap": "paired source-document connected clusters; 2000 draws, seed20261009, nearest-rank 2.5%/97.5% percentiles: ceil(p*n)-1, no interpolation (2000 draws: indices49/1949); no p-values",
+    "p50": "sample median",
+    "p95": "nearest rank ceil(0.95*n), known values only"
+  },
+  "model": {
+    "backend_release": "b9757",
+    "exact_license": "Apache-2.0; personal research; no redistribution of weights",
+    "official_repo": "Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+    "official_revision": "91cad51170dc346986eccefdc2dd33a9da36ead9",
+    "weight_bytes": 1117320736,
+    "weight_file": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+    "weight_sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e"
+  },
+  "no_Gold_predictions_task_ids_or_raw_text_bundled": true,
+  "original_Dev_exploratory": {
+    "qasper/B1": {
+      "answer_f1": 0.18365958087320317,
+      "citation_support_rate": null,
+      "complete_usage_n": 36,
+      "evidence_f1": 0.05246913580246913,
+      "evidence_recall_at_5": 0.4482758620689655,
+      "evidence_recall_eligible_n": 29,
+      "evidence_recall_ineligible_n": 7,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 42,
+        "observed_final_citations": 42,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 0,
+      "input_tokens": {
+        "known_n": 36,
+        "mean_known": 1897.388888888889,
+        "p50": 1868.5,
+        "p95_nearest_rank": 2273,
+        "total_known": 68306,
+        "unknown_n": 0
+      },
+      "insufficient_evidence": 0,
+      "latency_ms": {
+        "known_n": 36,
+        "mean_known": 2310.3055555564224,
+        "p50": 2734.0000000040163,
+        "p95_nearest_rank": 3125.0,
+        "total_known": 83171.0000000312,
+        "unknown_n": 0
+      },
+      "model_calls": {
+        "known_n": 36,
+        "mean_known": 1,
+        "p50": 1.0,
+        "p95_nearest_rank": 1,
+        "total_known": 36,
+        "unknown_n": 0
+      },
+      "n": 36,
+      "output_tokens": {
+        "known_n": 36,
+        "mean_known": 355.6388888888889,
+        "p50": 446.0,
+        "p95_nearest_rank": 512,
+        "total_known": 12803,
+        "unknown_n": 0
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "reported_input_tokens_total": 68306,
+      "reported_output_tokens_total": 12803,
+      "runtime_error_counts": {
+        "incomplete_or_refused_completion": 17
+      },
+      "runtime_failed": 17,
+      "runtime_failed_rate": 0.4722222222222222,
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "status_counts": {
+        "completed": 19,
+        "failed": 17
+      },
+      "tool_calls": {
+        "known_n": 36,
+        "mean_known": 6,
+        "p50": 6.0,
+        "p95_nearest_rank": 6,
+        "total_known": 216,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    },
+    "qasper/B2": {
+      "answer_f1": 0.0538285041436302,
+      "citation_support_rate": null,
+      "complete_usage_n": 36,
+      "evidence_f1": 0.04056437389770723,
+      "evidence_recall_at_5": 0.35344827586206895,
+      "evidence_recall_eligible_n": 29,
+      "evidence_recall_ineligible_n": 7,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 26,
+        "observed_final_citations": 26,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 0,
+      "input_tokens": {
+        "known_n": 36,
+        "mean_known": 1489.5555555555557,
+        "p50": 1966.0,
+        "p95_nearest_rank": 3061,
+        "total_known": 53624,
+        "unknown_n": 0
+      },
+      "insufficient_evidence": 0,
+      "latency_ms": {
+        "known_n": 36,
+        "mean_known": 1930.166666667598,
+        "p50": 1960.5000000010477,
+        "p95_nearest_rank": 3390.9999999887077,
+        "total_known": 69486.00000003353,
+        "unknown_n": 0
+      },
+      "model_calls": {
+        "known_n": 36,
+        "mean_known": 1.6666666666666667,
+        "p50": 2.0,
+        "p95_nearest_rank": 2,
+        "total_known": 60,
+        "unknown_n": 0
+      },
+      "n": 36,
+      "output_tokens": {
+        "known_n": 36,
+        "mean_known": 274.55555555555554,
+        "p50": 263.0,
+        "p95_nearest_rank": 531,
+        "total_known": 9884,
+        "unknown_n": 0
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "reported_input_tokens_total": 53624,
+      "reported_output_tokens_total": 9884,
+      "runtime_error_counts": {
+        "incomplete_or_refused_completion": 12,
+        "input_token_budget_exceeded": 12
+      },
+      "runtime_failed": 24,
+      "runtime_failed_rate": 0.6666666666666666,
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "status_counts": {
+        "completed": 12,
+        "failed": 24
+      },
+      "tool_calls": {
+        "known_n": 36,
+        "mean_known": 8.333333333333334,
+        "p50": 6.0,
+        "p95_nearest_rank": 12,
+        "total_known": 300,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    },
+    "qasper/B3": {
+      "answer_f1": 0.0538285041436302,
+      "citation_support_rate": null,
+      "complete_usage_n": 36,
+      "evidence_f1": 0.04056437389770723,
+      "evidence_recall_at_5": 0.35344827586206895,
+      "evidence_recall_eligible_n": 29,
+      "evidence_recall_ineligible_n": 7,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 20,
+        "observed_final_citations": 20,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 0,
+      "input_tokens": {
+        "known_n": 36,
+        "mean_known": 2311.527777777778,
+        "p50": 2056.0,
+        "p95_nearest_rank": 5859,
+        "total_known": 83215,
+        "unknown_n": 0
+      },
+      "insufficient_evidence": 0,
+      "latency_ms": {
+        "known_n": 36,
+        "mean_known": 2204.0277777765973,
+        "p50": 2945.50000000163,
+        "p95_nearest_rank": 3718.9999999973224,
+        "total_known": 79344.99999995751,
+        "unknown_n": 0
+      },
+      "model_calls": {
+        "known_n": 36,
+        "mean_known": 2.0555555555555554,
+        "p50": 2.0,
+        "p95_nearest_rank": 4,
+        "total_known": 74,
+        "unknown_n": 0
+      },
+      "n": 36,
+      "output_tokens": {
+        "known_n": 36,
+        "mean_known": 300.52777777777777,
+        "p50": 356.5,
+        "p95_nearest_rank": 541,
+        "total_known": 10819,
+        "unknown_n": 0
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "reported_input_tokens_total": 83215,
+      "reported_output_tokens_total": 10819,
+      "runtime_error_counts": {
+        "incomplete_or_refused_completion": 12,
+        "input_token_budget_exceeded": 14
+      },
+      "runtime_failed": 26,
+      "runtime_failed_rate": 0.7222222222222222,
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "status_counts": {
+        "completed": 10,
+        "failed": 26
+      },
+      "tool_calls": {
+        "known_n": 36,
+        "mean_known": 8.666666666666666,
+        "p50": 6.0,
+        "p95_nearest_rank": 12,
+        "total_known": 312,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    },
+    "scifact/B1": {
+      "abstract": {
+        "counts": {
+          "correct": 3,
+          "relevant": 29,
+          "retrieved": 17
+        },
+        "f1": 0.13043478260869565,
+        "precision": 0.17647058823529413,
+        "recall": 0.10344827586206896
+      },
+      "abstract_label_only": {
+        "counts": {
+          "correct": 3,
+          "relevant": 29,
+          "retrieved": 17
+        },
+        "f1": 0.13043478260869565,
+        "precision": 0.17647058823529413,
+        "recall": 0.10344827586206896
+      },
+      "accuracy": 0.175,
+      "citation_support_rate": null,
+      "complete_usage_n": 40,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 35,
+        "observed_final_citations": 35,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 0,
+      "input_tokens": {
+        "known_n": 40,
+        "mean_known": 1331.1,
+        "p50": 1322.0,
+        "p95_nearest_rank": 1425,
+        "total_known": 53244,
+        "unknown_n": 0
+      },
+      "insufficient_evidence": 0,
+      "latency_ms": {
+        "known_n": 40,
+        "mean_known": 1032.3999999995067,
+        "p50": 773.5000000029686,
+        "p95_nearest_rank": 2406.9999999919673,
+        "total_known": 41295.99999998027,
+        "unknown_n": 0
+      },
+      "macro_f1": 0.24761904761904763,
+      "model_calls": {
+        "known_n": 40,
+        "mean_known": 1,
+        "p50": 1.0,
+        "p95_nearest_rank": 1,
+        "total_known": 40,
+        "unknown_n": 0
+      },
+      "n": 40,
+      "ndcg_at_k": {
+        "eligible_n": 27,
+        "ineligible_n": 13,
+        "k": 5,
+        "mean": 0.7330180805657438
+      },
+      "output_tokens": {
+        "known_n": 40,
+        "mean_known": 74.675,
+        "p50": 16.0,
+        "p95_nearest_rank": 365,
+        "total_known": 2987,
+        "unknown_n": 0
+      },
+      "per_class": {
+        "CONTRADICT": {
+          "f1": 0.3,
+          "precision": 0.5,
+          "recall": 0.21428571428571427
+        },
+        "NEI": {
+          "f1": 0.3,
+          "precision": 0.42857142857142855,
+          "recall": 0.23076923076923078
+        },
+        "SUPPORT": {
+          "f1": 0.14285714285714288,
+          "precision": 1.0,
+          "recall": 0.07692307692307693
+        }
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "recall_at_k": {
+        "eligible_n": 27,
+        "ineligible_n": 13,
+        "k": 5,
+        "mean": 0.7777777777777778
+      },
+      "reciprocal_rank_at_k": {
+        "eligible_n": 27,
+        "ineligible_n": 13,
+        "k": 5,
+        "mean": 0.7296296296296296
+      },
+      "reported_input_tokens_total": 53244,
+      "reported_output_tokens_total": 2987,
+      "runtime_error_counts": {},
+      "runtime_failed": 0,
+      "runtime_failed_rate": 0.0,
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "sentence_label": {
+        "counts": {
+          "correct": 4,
+          "relevant": 57,
+          "retrieved": 35
+        },
+        "f1": 0.08695652173913045,
+        "precision": 0.11428571428571428,
+        "recall": 0.07017543859649122
+      },
+      "sentence_selection": {
+        "counts": {
+          "correct": 6,
+          "relevant": 57,
+          "retrieved": 35
+        },
+        "f1": 0.13043478260869565,
+        "precision": 0.17142857142857143,
+        "recall": 0.10526315789473684
+      },
+      "status_counts": {
+        "completed": 40
+      },
+      "tool_calls": {
+        "known_n": 40,
+        "mean_known": 6,
+        "p50": 6.0,
+        "p95_nearest_rank": 6,
+        "total_known": 240,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    },
+    "scifact/B2": {
+      "abstract": {
+        "counts": {
+          "correct": 1,
+          "relevant": 29,
+          "retrieved": 8
+        },
+        "f1": 0.05405405405405405,
+        "precision": 0.125,
+        "recall": 0.034482758620689655
+      },
+      "abstract_label_only": {
+        "counts": {
+          "correct": 2,
+          "relevant": 29,
+          "retrieved": 8
+        },
+        "f1": 0.1081081081081081,
+        "precision": 0.25,
+        "recall": 0.06896551724137931
+      },
+      "accuracy": 0.15,
+      "citation_support_rate": null,
+      "complete_usage_n": 40,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 14,
+        "observed_final_citations": 14,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 0,
+      "input_tokens": {
+        "known_n": 40,
+        "mean_known": 2366.7,
+        "p50": 2503.5,
+        "p95_nearest_rank": 2679,
+        "total_known": 94668,
+        "unknown_n": 0
+      },
+      "insufficient_evidence": 0,
+      "latency_ms": {
+        "known_n": 40,
+        "mean_known": 1512.9500000006374,
+        "p50": 1390.5000000013388,
+        "p95_nearest_rank": 2343.9999999973224,
+        "total_known": 60518.000000025495,
+        "unknown_n": 0
+      },
+      "macro_f1": 0.22222222222222224,
+      "model_calls": {
+        "known_n": 40,
+        "mean_known": 2,
+        "p50": 2.0,
+        "p95_nearest_rank": 2,
+        "total_known": 80,
+        "unknown_n": 0
+      },
+      "n": 40,
+      "ndcg_at_k": {
+        "eligible_n": 27,
+        "ineligible_n": 13,
+        "k": 5,
+        "mean": 0.7270384968581665
+      },
+      "output_tokens": {
+        "known_n": 40,
+        "mean_known": 86,
+        "p50": 55.5,
+        "p95_nearest_rank": 255,
+        "total_known": 3440,
+        "unknown_n": 0
+      },
+      "per_class": {
+        "CONTRADICT": {
+          "f1": 0.4,
+          "precision": 0.6666666666666666,
+          "recall": 0.2857142857142857
+        },
+        "NEI": {
+          "f1": 0.2666666666666667,
+          "precision": 1.0,
+          "recall": 0.15384615384615385
+        },
+        "SUPPORT": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        }
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "recall_at_k": {
+        "eligible_n": 27,
+        "ineligible_n": 13,
+        "k": 5,
+        "mean": 0.7962962962962963
+      },
+      "reciprocal_rank_at_k": {
+        "eligible_n": 27,
+        "ineligible_n": 13,
+        "k": 5,
+        "mean": 0.7129629629629629
+      },
+      "reported_input_tokens_total": 94668,
+      "reported_output_tokens_total": 3440,
+      "runtime_error_counts": {
+        "empty_list": 1,
+        "incomplete_or_refused_completion": 1
+      },
+      "runtime_failed": 2,
+      "runtime_failed_rate": 0.05,
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "sentence_label": {
+        "counts": {
+          "correct": 1,
+          "relevant": 57,
+          "retrieved": 12
+        },
+        "f1": 0.028985507246376812,
+        "precision": 0.08333333333333333,
+        "recall": 0.017543859649122806
+      },
+      "sentence_selection": {
+        "counts": {
+          "correct": 1,
+          "relevant": 57,
+          "retrieved": 12
+        },
+        "f1": 0.028985507246376812,
+        "precision": 0.08333333333333333,
+        "recall": 0.017543859649122806
+      },
+      "status_counts": {
+        "completed": 38,
+        "failed": 2
+      },
+      "tool_calls": {
+        "known_n": 40,
+        "mean_known": 10.95,
+        "p50": 12.0,
+        "p95_nearest_rank": 12,
+        "total_known": 438,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    },
+    "scifact/B3": {
+      "abstract": {
+        "counts": {
+          "correct": 0,
+          "relevant": 29,
+          "retrieved": 1
+        },
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "abstract_label_only": {
+        "counts": {
+          "correct": 1,
+          "relevant": 29,
+          "retrieved": 1
+        },
+        "f1": 0.06666666666666667,
+        "precision": 1.0,
+        "recall": 0.034482758620689655
+      },
+      "accuracy": 0.025,
+      "citation_support_rate": null,
+      "complete_usage_n": 37,
+      "final_citation_ids": {
+        "ids_in_evidence_registry": 3,
+        "observed_final_citations": 3,
+        "scope": "Identity membership only; does not establish source span or semantic support."
+      },
+      "incomplete_or_unknown_usage_n": 3,
+      "input_tokens": {
+        "known_n": 37,
+        "mean_known": 6553.864864864865,
+        "p50": 7085,
+        "p95_nearest_rank": 8620,
+        "total_known": 242493,
+        "unknown_n": 3
+      },
+      "insufficient_evidence": 2,
+      "latency_ms": {
+        "known_n": 40,
+        "mean_known": 3316.0250000004453,
+        "p50": 3194.999999999709,
+        "p95_nearest_rank": 5531.000000002678,
+        "total_known": 132641.0000000178,
+        "unknown_n": 0
+      },
+      "macro_f1": 0.044444444444444446,
+      "model_calls": {
+        "known_n": 40,
+        "mean_known": 3.875,
+        "p50": 4.0,
+        "p95_nearest_rank": 5,
+        "total_known": 155,
+        "unknown_n": 0
+      },
+      "n": 40,
+      "ndcg_at_k": {
+        "eligible_n": 27,
+        "ineligible_n": 13,
+        "k": 5,
+        "mean": 0.7543421158496219
+      },
+      "output_tokens": {
+        "known_n": 37,
+        "mean_known": 225.43243243243242,
+        "p50": 188,
+        "p95_nearest_rank": 547,
+        "total_known": 8341,
+        "unknown_n": 3
+      },
+      "per_class": {
+        "CONTRADICT": {
+          "f1": 0.13333333333333333,
+          "precision": 1.0,
+          "recall": 0.07142857142857142
+        },
+        "NEI": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "SUPPORT": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        }
+      },
+      "quality_denominator_includes_runtime_failures": true,
+      "recall_at_k": {
+        "eligible_n": 27,
+        "ineligible_n": 13,
+        "k": 5,
+        "mean": 0.8518518518518519
+      },
+      "reciprocal_rank_at_k": {
+        "eligible_n": 27,
+        "ineligible_n": 13,
+        "k": 5,
+        "mean": 0.7253086419753086
+      },
+      "reported_input_tokens_total": 254745,
+      "reported_output_tokens_total": 8736,
+      "runtime_error_counts": {
+        "empty_list": 1,
+        "incomplete_or_refused_completion": 1,
+        "input_token_budget_exceeded": 27,
+        "total_token_reservation_exceeded": 1,
+        "transport_error": 3
+      },
+      "runtime_failed": 33,
+      "runtime_failed_rate": 0.825,
+      "semantic_review": "No independent human semantic review; citation ID validity is not support.",
+      "sentence_label": {
+        "counts": {
+          "correct": 0,
+          "relevant": 57,
+          "retrieved": 2
+        },
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "sentence_selection": {
+        "counts": {
+          "correct": 0,
+          "relevant": 57,
+          "retrieved": 2
+        },
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "status_counts": {
+        "completed": 5,
+        "failed": 33,
+        "insufficient_evidence": 2
+      },
+      "tool_calls": {
+        "known_n": 40,
+        "mean_known": 15.45,
+        "p50": 18.0,
+        "p95_nearest_rank": 18,
+        "total_known": 618,
+        "unknown_n": 0
+      },
+      "unsupported_claim_rate": null
+    }
+  },
+  "original_audit_report_sha256": "4c174d27f7d140dd019bd294065c716368a6bc547ef0f51b8f58fa6add99f5a2",
+  "paired_cluster_statistics_final": {
+    "qasper": {
+      "B4-minus-B1": {
+        "after_group": "B4",
+        "before_group": "B1",
+        "cluster_n": 108,
+        "estimates": {
+          "answer_f1": {
+            "after": 0.13451819681752872,
+            "before": 0.16724562192323114,
+            "ci95_percentile": [
+              -0.09593812829410614,
+              0.02786610733983949
+            ],
+            "delta": -0.03272742510570242
+          },
+          "evidence_f1": {
+            "after": 0.12206055261610817,
+            "before": 0.13450176366843034,
+            "ci95_percentile": [
+              -0.06894473838918282,
+              0.047898295120517353
+            ],
+            "delta": -0.012441211052322168
+          }
+        },
+        "paired_task_n": 108,
+        "repetitions": 2000,
+        "seed": 20261009
+      },
+      "B4-minus-B4off": {
+        "after_group": "B4",
+        "before_group": "B4off",
+        "cluster_n": 108,
+        "estimates": {
+          "answer_f1": {
+            "after": 0.13451819681752872,
+            "before": 0.074676340587522,
+            "ci95_percentile": [
+              0.02458703514824391,
+              0.10156736099898975
+            ],
+            "delta": 0.05984185623000672
+          },
+          "evidence_f1": {
+            "after": 0.12206055261610817,
+            "before": 0.08708112874779542,
+            "ci95_percentile": [
+              0.00823045267489711,
+              0.06790123456790123
+            ],
+            "delta": 0.03497942386831275
+          }
+        },
+        "paired_task_n": 108,
+        "repetitions": 2000,
+        "seed": 20261009
+      }
+    },
+    "scifact": {
+      "B4-minus-B1": {
+        "after_group": "B4",
+        "before_group": "B1",
+        "cluster_n": 95,
+        "estimates": {
+          "label_accuracy": {
+            "after": 0.02,
+            "before": 0.1,
+            "ci95_percentile": [
+              -0.1346153846153846,
+              -0.030000000000000002
+            ],
+            "delta": -0.08
+          },
+          "sentence_label_micro_f1": {
+            "after": 0.014084507042253523,
+            "before": 0.05235602094240838,
+            "ci95_percentile": [
+              -0.07825752722613709,
+              -0.0017289533182604094
+            ],
+            "delta": -0.038271513900154853
+          }
+        },
+        "paired_task_n": 100,
+        "repetitions": 2000,
+        "seed": 20261009
+      },
+      "B4-minus-B4off": {
+        "after_group": "B4",
+        "before_group": "B4off",
+        "cluster_n": 95,
+        "estimates": {
+          "label_accuracy": {
+            "after": 0.02,
+            "before": 0.0,
+            "ci95_percentile": [
+              0.0,
+              0.05102040816326531
+            ],
+            "delta": 0.02
+          },
+          "sentence_label_micro_f1": {
+            "after": 0.014084507042253523,
+            "before": 0.0,
+            "ci95_percentile": [
+              0.0,
+              0.04285714285714286
+            ],
+            "delta": 0.014084507042253523
+          }
+        },
+        "paired_task_n": 100,
+        "repetitions": 2000,
+        "seed": 20261009
+      }
+    }
+  },
+  "schema": "career_public_aggregate_v1",
+  "source_of_numbers": "immutable completed report; career preparation performs no inference",
+  "verified_observations": {
+    "B4_Dev": 152,
+    "B5": 30,
+    "Final": 624,
+    "original_Dev_references": 228
+  }
+}

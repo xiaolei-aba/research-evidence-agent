@@ -1,0 +1,209 @@
+{
+  "status": "first-byte content lock; archives have versioned URL or latest URL plus SHA",
+  "revisions": {
+    "qasper_evaluator": "afd0fb96bf78ce8cd8157639c6f6a6995e4f9089",
+    "scifact": "68b98a56d93e0f9da0d2aab4e6c3294699a0f72e",
+    "beir": "ef83d29307061c65d04b035b4f4e7c18bd8374af",
+    "multihop": "c1c1287aa60a94acf9c4d20c891c9cd611a0f6e8",
+    "qasper_hf": "fdc9d8214fbab5dd782958601db4d678e6934a54",
+    "ragbench_hf": "97808f3e5fd16ede40bbff6c2949af8139b2eb7b"
+  },
+  "files": [
+    {
+      "url": "https://api.github.com/repos/allenai/qasper-led-baseline/commits/HEAD",
+      "path": "data/benchmarks/private_cache/metadata/qasper_evaluator_commit.json",
+      "bytes": 13402,
+      "sha256": "65b26db0e976574705dc461d2201e1bea96a3ca609d7e461f5c486ec018f41c4",
+      "retrieved_at": "2026-10-09T11:12:06.378642+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/allenai/qasper-led-baseline/git/trees/afd0fb96bf78ce8cd8157639c6f6a6995e4f9089?recursive=1",
+      "path": "data/benchmarks/private_cache/metadata/qasper_evaluator_tree.json",
+      "bytes": 6185,
+      "sha256": "b9896f82336c238fac61b82d47b232e2cc6cba41e88b915150437f2777964318",
+      "retrieved_at": "2026-10-09T11:12:07.596592+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/allenai/qasper-led-baseline/afd0fb96bf78ce8cd8157639c6f6a6995e4f9089/README.md",
+      "path": "data/benchmarks/private_cache/docs/qasper_evaluator_README.md",
+      "bytes": 2125,
+      "sha256": "3c2797e9911d9486877302d8ea754e9b943d39c8cca0dc82d9f205b68c304d2e",
+      "retrieved_at": "2026-10-09T11:12:08.892653+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/allenai/qasper-led-baseline/afd0fb96bf78ce8cd8157639c6f6a6995e4f9089/LICENSE",
+      "path": "data/benchmarks/private_cache/docs/qasper_evaluator_LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "retrieved_at": "2026-10-09T11:12:10.434893+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/allenai/scifact/commits/HEAD",
+      "path": "data/benchmarks/private_cache/metadata/scifact_commit.json",
+      "bytes": 5389,
+      "sha256": "f7957ea8d352aac51cbdd19774aeca7d2c2a792224ba4458a81ed7ca3842437b",
+      "retrieved_at": "2026-10-09T11:12:12.655631+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/allenai/scifact/git/trees/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e?recursive=1",
+      "path": "data/benchmarks/private_cache/metadata/scifact_tree.json",
+      "bytes": 14273,
+      "sha256": "14a0913ce257cc822cbeb86aa8f88938da44914556b9f2281dc211b90f94631f",
+      "retrieved_at": "2026-10-09T11:12:14.405041+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/README.md",
+      "path": "data/benchmarks/private_cache/docs/scifact_README.md",
+      "bytes": 8671,
+      "sha256": "3f0eb7f6d009b3785fede6592918b8b583e7193d26f14173fdf0c79aba1dcc79",
+      "retrieved_at": "2026-10-09T11:12:16.543389+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/LICENSE.md",
+      "path": "data/benchmarks/private_cache/docs/scifact_LICENSE.md",
+      "bytes": 542,
+      "sha256": "56ee69bc639cbab8f0b2e4b67091ec5e9390aa99a1d65f0a35e4274686c9a806",
+      "retrieved_at": "2026-10-09T11:12:18.035579+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/doc/data.md",
+      "path": "data/benchmarks/private_cache/docs/scifact_doc_data.md",
+      "bytes": 4290,
+      "sha256": "f8f4cc2f7bf32347dd47d419be731a5d0eeb60ebb75423619e02919c7f337df7",
+      "retrieved_at": "2026-10-09T11:12:19.288567+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/script/download-data.sh",
+      "path": "data/benchmarks/private_cache/docs/scifact_script_download-data.sh",
+      "bytes": 324,
+      "sha256": "e04b1fa300286791e38d37baec454f2e3c758cb41285ddb699793cea6d2b5aa4",
+      "retrieved_at": "2026-10-09T11:12:20.526771+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/beir-cellar/beir/commits/HEAD",
+      "path": "data/benchmarks/private_cache/metadata/beir_commit.json",
+      "bytes": 6489,
+      "sha256": "100245523bb6b632d30d533a29323718c931f69ab96ff3e4f872e96f8e363821",
+      "retrieved_at": "2026-10-09T11:12:21.801771+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/beir-cellar/beir/git/trees/ef83d29307061c65d04b035b4f4e7c18bd8374af?recursive=1",
+      "path": "data/benchmarks/private_cache/metadata/beir_tree.json",
+      "bytes": 36810,
+      "sha256": "dedadbb26daf5347179769524f4d93ad734e64857cec71a8006f4fd232eafe14",
+      "retrieved_at": "2026-10-09T11:12:23.854327+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/beir-cellar/beir/ef83d29307061c65d04b035b4f4e7c18bd8374af/README.md",
+      "path": "data/benchmarks/private_cache/docs/beir_README.md",
+      "bytes": 27120,
+      "sha256": "d030c5374d29194e6c23ded13314dc6964b253c137cbcf606765a4222f4bc4e1",
+      "retrieved_at": "2026-10-09T11:12:25.289420+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/beir-cellar/beir/ef83d29307061c65d04b035b4f4e7c18bd8374af/LICENSE",
+      "path": "data/benchmarks/private_cache/docs/beir_LICENSE",
+      "bytes": 11348,
+      "sha256": "d4c454f2506fb94fd17f71498fd66177546a570676cbe85b48a64a9e98596794",
+      "retrieved_at": "2026-10-09T11:12:26.920771+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/yixuantt/MultiHop-RAG/commits/HEAD",
+      "path": "data/benchmarks/private_cache/metadata/multihop_commit.json",
+      "bytes": 13713,
+      "sha256": "91ec3a511801e8ae851ac7d264a681e8dc21a33a93f100210e71750daec7b4a2",
+      "retrieved_at": "2026-10-09T11:12:28.420844+00:00"
+    },
+    {
+      "url": "https://api.github.com/repos/yixuantt/MultiHop-RAG/git/trees/c1c1287aa60a94acf9c4d20c891c9cd611a0f6e8?recursive=1",
+      "path": "data/benchmarks/private_cache/metadata/multihop_tree.json",
+      "bytes": 10596,
+      "sha256": "d8925170b9f0140a54ca877c1fb877ab4c5f895085697564847918ae802081f5",
+      "retrieved_at": "2026-10-09T11:12:29.632225+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/yixuantt/MultiHop-RAG/c1c1287aa60a94acf9c4d20c891c9cd611a0f6e8/README.md",
+      "path": "data/benchmarks/private_cache/docs/multihop_README.md",
+      "bytes": 2091,
+      "sha256": "05c2fd7fc24d7c2698cb2381232f213416327871fbd30e04a1493e1bcaa7ed42",
+      "retrieved_at": "2026-10-09T11:12:31.746319+00:00"
+    },
+    {
+      "url": "https://huggingface.co/api/datasets/allenai/qasper",
+      "path": "data/benchmarks/private_cache/metadata/qasper_hf.json",
+      "bytes": 1718,
+      "sha256": "f23a185eef9b1c459d7f4923c369d24f6a0166c2e2c1804a06a18edd4156c032",
+      "retrieved_at": "2026-10-09T11:12:34.914373+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/allenai/qasper/resolve/fdc9d8214fbab5dd782958601db4d678e6934a54/README.md",
+      "path": "data/benchmarks/private_cache/docs/qasper_hf_README.md",
+      "bytes": 9639,
+      "sha256": "da348d3f8277f8a93ca397941f6a525433e282858b1c0562aed3f667d8e55b05",
+      "retrieved_at": "2026-10-09T11:12:41.239498+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/allenai/qasper/resolve/fdc9d8214fbab5dd782958601db4d678e6934a54/qasper.py",
+      "path": "data/benchmarks/private_cache/docs/qasper_loader.py",
+      "bytes": 5950,
+      "sha256": "381d623d4992118738c0a17b9c8219136f493eda381125716ab32b814d0b3c0a",
+      "retrieved_at": "2026-10-09T11:12:44.857823+00:00"
+    },
+    {
+      "url": "https://huggingface.co/api/datasets/galileo-ai/ragbench",
+      "path": "data/benchmarks/private_cache/metadata/ragbench_hf.json",
+      "bytes": 26495,
+      "sha256": "34202f855695389561792456994068a60b355934fdcdcad3609326cfa83d4879",
+      "retrieved_at": "2026-10-09T11:12:48.235361+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/galileo-ai/ragbench/resolve/97808f3e5fd16ede40bbff6c2949af8139b2eb7b/README.md",
+      "path": "data/benchmarks/private_cache/docs/ragbench_hf_README.md",
+      "bytes": 24681,
+      "sha256": "1afeca59575e9508432990054fd75b18b851a384376e2dd7e83852655f33cbe5",
+      "retrieved_at": "2026-10-09T11:12:52.449408+00:00"
+    },
+    {
+      "url": "https://qasper-dataset.s3.us-west-2.amazonaws.com/qasper-train-dev-v0.3.tgz",
+      "path": "data/benchmarks/private_cache/downloads/qasper-train-dev-v0.3.tgz",
+      "bytes": 10835856,
+      "sha256": "a28fdf966db827bcee3d873107d6b6669864fb7ca8fbf73a192f5e39191bdb5a",
+      "retrieved_at": "2026-10-09T11:16:54.485599+00:00"
+    },
+    {
+      "url": "https://qasper-dataset.s3.us-west-2.amazonaws.com/qasper-test-and-evaluator-v0.3.tgz",
+      "path": "data/benchmarks/private_cache/downloads/qasper-test-and-evaluator-v0.3.tgz",
+      "bytes": 3865061,
+      "sha256": "72a52a41193e2838b8074f80ac074b94f956b84886c36a61c58a7df4171bdd72",
+      "retrieved_at": "2026-10-09T11:18:14.018218+00:00"
+    },
+    {
+      "url": "https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz",
+      "path": "data/benchmarks/private_cache/downloads/scifact.tar.gz",
+      "bytes": 3115079,
+      "sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+      "retrieved_at": "2026-10-09T11:19:10.266982+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/doc/evaluation.md",
+      "path": "data/benchmarks/private_cache/docs/scifact_doc_evaluation.md",
+      "bytes": 5852,
+      "sha256": "daf79d500b0e5df27b29d28d5c14c6876f72cb4dfc2826eb93ca552d80ca0803",
+      "retrieved_at": "2026-10-09T11:21:39.547694+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/verisci/evaluate/lib/metrics.py",
+      "path": "data/benchmarks/private_cache/docs/scifact_verisci_evaluate_lib_metrics.py",
+      "bytes": 5738,
+      "sha256": "ffda621f72cf3f1c557cc88be1e02fdee49b3966f5892f9f08db49f1ed29200b",
+      "retrieved_at": "2026-10-09T11:21:42.127221+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/allenai/scifact/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/verisci/evaluate/lib/data.py",
+      "path": "data/benchmarks/private_cache/docs/scifact_verisci_evaluate_lib_data.py",
+      "bytes": 8911,
+      "sha256": "b413aedc068d980520e9a54870591738d9833ca6e24614742ad070b7edcc3ca5",
+      "retrieved_at": "2026-10-09T11:21:43.748226+00:00"
+    }
+  ]
+}

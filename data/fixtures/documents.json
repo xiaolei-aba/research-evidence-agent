@@ -1,0 +1,38 @@
+[
+  {
+    "document_id": "atlas",
+    "source": "synthetic://engineering/atlas",
+    "title": "Atlas project",
+    "content": "Atlas is owned by the Cedar team.",
+    "facts": {
+      "atlas.owner": "Cedar"
+    }
+  },
+  {
+    "document_id": "cedar",
+    "source": "synthetic://engineering/cedar",
+    "title": "Cedar team",
+    "content": "Cedar is based in Harbor.",
+    "facts": {
+      "cedar.location": "Harbor"
+    }
+  },
+  {
+    "document_id": "quota1",
+    "source": "synthetic://engineering/quota1",
+    "title": "Quota policy",
+    "content": "The quota is 5 units.",
+    "facts": {
+      "quota": "5"
+    }
+  },
+  {
+    "document_id": "quota2",
+    "source": "synthetic://engineering/quota2",
+    "title": "Quota policy",
+    "content": "The quota is 8 units.",
+    "facts": {
+      "quota": "8"
+    }
+  }
+]
