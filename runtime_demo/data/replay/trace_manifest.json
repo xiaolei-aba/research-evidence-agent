@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "notice": "Sanitized historical events. Playback is read-only and makes no model calls.",
+  "timestamp_policy": "null_when_unrecorded; duration_ms_is_operation_duration_not_a_timeline",
+  "traces": [
+    {
+      "public_id": "dev_generation_failure",
+      "title": "Real model Dev: generation length failure",
+      "source_kind": "real_model_dev_history",
+      "file": "example_trace.jsonl",
+      "sha256": "4900d0b981556aa5906221bfa32f242033a4abc520a10429b1002a6858d06f7f",
+      "event_count": 69,
+      "recovery_observed": false,
+      "known": [
+        "record_order",
+        "operation_durations",
+        "terminal_failure_category",
+        "checkpoint_chain_verified"
+      ],
+      "unknown": [
+        "event_wall_clock_timestamps",
+        "semantic_answer_correctness",
+        "real_model_recovery"
+      ]
+    },
+    {
+      "public_id": "engineering_process_restart",
+      "title": "Engineering mock: committed evidence process restart",
+      "source_kind": "engineering_mock_history",
+      "file": "engineering_recovery.jsonl",
+      "sha256": "90976670063bd051205b60da99f63a6fd4f659275b9e732358e8a1e067b1e312",
+      "event_count": 48,
+      "recovery_observed": true,
+      "known": [
+        "record_order",
+        "operation_durations",
+        "checkpoint_chain_verified",
+        "cpu_mock_process_restart",
+        "no_completed_tool_replay"
+      ],
+      "unknown": [
+        "event_wall_clock_timestamps",
+        "production_recovery_rate",
+        "real_model_recovery"
+      ]
+    }
+  ]
+}

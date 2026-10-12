@@ -4,9 +4,7 @@
 
 Planner为同一问题产生多个查询，Replan又可能再次命中同一原文片段。若每次命中都加入Memory，即使单子任务selector限制没有变化，全局回答、Critic和Replan的上下文仍可能包含重复内容。完整B1/B2/B3 Dev的B3有772项证据，其中181项精确重复（23.45%）和42次Token预算失败。该计数命中预登记规则，所以B4选择source_identity_dedup；这些是Dev观察，不是Final调参依据。
 
-正式设计保存在本地冻结研究仓库（公开候选不附），本讲解没有覆盖或修改其内容。B4复用既有EvidenceStore组件，并非发明BM25、去重算法或Token最优选择。
-
-该组件属于Codex辅助实现与实验的项目；用户本人独立编写/推导的范围尚未核实，不能把这里的实现和讲解自动写成独立个人原创。具体归属见[开发归属说明](development_attribution.md)。
+B4复用既有EvidenceStore组件，并非发明BM25、去重算法或Token最优选择。实验设计与结果见[Experiments](experiments.md)。
 
 ## 代码实际做了什么
 
@@ -67,8 +65,8 @@ on相对off的Final QASPER Answer F1差为+0.0598，配对95%簇区间[0.0246,0.
 
 ## 30秒讲解与说法边界
 
-“B4用完整来源身份合并跨查询的同一证据，保留不同来源/版本和首次引用ID。它是已有组件的受控消融。Final QASPER F1高于off但低于B1，SciFact仅2/100条Label正确；重复上下文减少后，一部分失败转移到总预留或生成协议，全任务成本反而增加。我的项目证据是完整、可审计的算法对照与负结果，不能声称独立原创或全面提升。”
+“B4用完整来源身份合并跨查询的同一证据，保留不同来源/版本和首次引用ID。它是已有组件的受控消融。Final QASPER F1高于off但低于B1，SciFact仅2/100条Label正确；重复上下文减少后，一部分失败转移到总预留或生成协议，全任务成本反而增加。该项目提供受控算法对照与负结果，不能声称独立原创或全面提升。”
 
-上段的本人实现/分析范围需按[开发归属说明](development_attribution.md)确认。当前不存在独立人审语义标签，Citation Support Rate、Unsupported Claim Rate保持null。
+当前不存在独立人审语义标签，Citation Support Rate、Unsupported Claim Rate保持null。
 
-实现来源：`src/deepresearch/memory/store.py`、`src/deepresearch/agent/research.py`、`src/deepresearch/runtime/execution.py`、`src/deepresearch/critic/citations.py`。结果来源：[公开聚合证据](release_evidence.json)（原始报告保留本地），原始本地审计SHA256 `4c174d27f7d140dd019bd294065c716368a6bc547ef0f51b8f58fa6add99f5a2`。任务级Dev例证见本地逐题Dev审计（公开候选不附）。
+实现来源：`src/deepresearch/memory/store.py`、`src/deepresearch/agent/research.py`、`src/deepresearch/runtime/execution.py`、`src/deepresearch/critic/citations.py`。结果来源：[公开聚合证据](release_evidence.json)与[Experiments](experiments.md)。复现范围和指标核验边界见[Limitations](limitations.md)。

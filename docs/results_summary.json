@@ -1,0 +1,436 @@
+{
+  "schema": "public-aggregate-results-v1",
+  "purpose": "Public aggregate interpretation of two related, independent historical experiments. No task IDs, questions, Gold, predictions or raw traces.",
+  "measurement_scope": {
+    "scores": "ratios in [0,1]; benchmark metrics are kept separate",
+    "all_task_denominators": true,
+    "runtime_failure_scoring": "Failures remain in the fixed task denominator and receive zero quality score; insufficient evidence is handled by each frozen benchmark mapping.",
+    "human_semantic_review_coverage": 0,
+    "citation_support_rate": null,
+    "unsupported_claim_rate": null,
+    "independent_recomputation_from_public_snapshot": false
+  },
+  "source_reports": [
+    {
+      "id": "v1_frozen_public_aggregate",
+      "sha256": "8192451f360dfd58e5e3e9a994b53a22a8e81e6bb8967814b0aa51940cc17642",
+      "redistributed": false
+    },
+    {
+      "id": "runtime_matched_dev_aggregate",
+      "sha256": "1cadbb87a25aedf55b0710415093efcdfef996aa9f1a65cfe50b7fa598489585",
+      "redistributed": false
+    },
+    {
+      "id": "sft_frozen_comparison",
+      "sha256": "7490f295feb6b4bbcad99f5bd450772670d394cc343b46fe2a3110b4809ddf49",
+      "redistributed": false
+    },
+    {
+      "id": "sft_supplemental_verification",
+      "sha256": "bd2d0c6507e4803dfc9aa1f0b3de3881e1463131349288fc3e773d1d3ecdb579",
+      "redistributed": false
+    },
+    {
+      "id": "selected_lora_configuration",
+      "sha256": "7d514593b7b8841d2955b3ab81031b9ece31c9297aeb415cbbbac1d100a59f11",
+      "redistributed": false
+    },
+    {
+      "id": "cross_study_data_boundary",
+      "sha256": "f2a99ce0c46a1db7f892c14d635f783a85a3a6aeda7cf8e63e1fbefc77ba5d0d",
+      "redistributed": false
+    }
+  ],
+  "agent_runtime_evaluation": {
+    "model": {
+      "id": "Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+      "revision": "91cad51170dc346986eccefdc2dd33a9da36ead9",
+      "format": "GGUF Q4_K_M",
+      "backend": "llama.cpp b9757",
+      "weight_sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e"
+    },
+    "v1_observation_counts": {
+      "B4_Dev": 152,
+      "B5": 30,
+      "Final": 624,
+      "original_Dev_references": 228
+    },
+    "v1_total_observations": 1034,
+    "v1_final": [
+      {
+        "benchmark": "qasper",
+        "arm": "B1",
+        "n": 108,
+        "statuses": {
+          "completed": 69,
+          "failed": 39
+        },
+        "answer_f1": 0.16724562192323114,
+        "label_accuracy": null,
+        "evidence_f1": 0.13450176366843034,
+        "sentence_label_micro_f1": null,
+        "reported_input_tokens": 196898,
+        "reported_output_tokens": 36798,
+        "latency_ms_mean": 2214.43518518626,
+        "tool_calls_mean": 5.962962962962963,
+        "runtime_error_counts": {
+          "empty_list": 1,
+          "incomplete_or_refused_completion": 38
+        }
+      },
+      {
+        "benchmark": "qasper",
+        "arm": "B4",
+        "n": 108,
+        "statuses": {
+          "completed": 55,
+          "failed": 53
+        },
+        "answer_f1": 0.13451819681752872,
+        "label_accuracy": null,
+        "evidence_f1": 0.12206055261610817,
+        "sentence_label_micro_f1": null,
+        "reported_input_tokens": 380292,
+        "reported_output_tokens": 41099,
+        "latency_ms_mean": 2804.851851851574,
+        "tool_calls_mean": 8.814814814814815,
+        "runtime_error_counts": {
+          "incomplete_or_refused_completion": 36,
+          "input_token_budget_exceeded": 14,
+          "total_token_reservation_exceeded": 3
+        }
+      },
+      {
+        "benchmark": "qasper",
+        "arm": "B4off",
+        "n": 108,
+        "statuses": {
+          "completed": 40,
+          "failed": 68
+        },
+        "answer_f1": 0.074676340587522,
+        "label_accuracy": null,
+        "evidence_f1": 0.08708112874779542,
+        "sentence_label_micro_f1": null,
+        "reported_input_tokens": 263278,
+        "reported_output_tokens": 29144,
+        "latency_ms_mean": 2087.9259259263226,
+        "tool_calls_mean": 8.75925925925926,
+        "runtime_error_counts": {
+          "incomplete_or_refused_completion": 21,
+          "input_token_budget_exceeded": 47
+        }
+      },
+      {
+        "benchmark": "scifact",
+        "arm": "B1",
+        "n": 100,
+        "statuses": {
+          "completed": 97,
+          "failed": 3
+        },
+        "answer_f1": null,
+        "label_accuracy": 0.1,
+        "evidence_f1": null,
+        "sentence_label_micro_f1": 0.05235602094240838,
+        "reported_input_tokens": 134186,
+        "reported_output_tokens": 6091,
+        "latency_ms_mean": 898.1700000003912,
+        "tool_calls_mean": 6,
+        "runtime_error_counts": {
+          "empty_list": 3
+        }
+      },
+      {
+        "benchmark": "scifact",
+        "arm": "B4",
+        "n": 100,
+        "statuses": {
+          "completed": 16,
+          "failed": 71,
+          "insufficient_evidence": 13
+        },
+        "answer_f1": null,
+        "label_accuracy": 0.02,
+        "evidence_f1": null,
+        "sentence_label_micro_f1": 0.014084507042253523,
+        "reported_input_tokens": 690645,
+        "reported_output_tokens": 24118,
+        "latency_ms_mean": 3205.5699999998615,
+        "tool_calls_mean": 16.14,
+        "runtime_error_counts": {
+          "empty_list": 4,
+          "incomplete_or_refused_completion": 1,
+          "input_token_budget_exceeded": 11,
+          "total_token_reservation_exceeded": 55
+        }
+      },
+      {
+        "benchmark": "scifact",
+        "arm": "B4off",
+        "n": 100,
+        "statuses": {
+          "completed": 8,
+          "failed": 89,
+          "insufficient_evidence": 3
+        },
+        "answer_f1": null,
+        "label_accuracy": 0.0,
+        "evidence_f1": null,
+        "sentence_label_micro_f1": 0.0,
+        "reported_input_tokens": 660863,
+        "reported_output_tokens": 23687,
+        "latency_ms_mean": 3098.5999999998603,
+        "tool_calls_mean": 16.38,
+        "runtime_error_counts": {
+          "empty_list": 1,
+          "incomplete_or_refused_completion": 5,
+          "input_token_budget_exceeded": 80,
+          "total_token_reservation_exceeded": 3
+        }
+      }
+    ],
+    "runtime_extension": {
+      "split": "matched Dev; no new Test",
+      "observations": 152,
+      "unique_tasks_per_arm": 76,
+      "groups": [
+        {
+          "benchmark": "qasper",
+          "arm": "C0",
+          "n": 36,
+          "statuses": {
+            "failed": 26,
+            "completed": 10
+          },
+          "answer_f1": 0.0538285041436302,
+          "label_accuracy": null,
+          "evidence_f1": 0.04056437389770723,
+          "sentence_label_micro_f1": null,
+          "reported_total_tokens": 94034,
+          "latency_ms_mean": 3798.1666666657675,
+          "tool_calls_mean": 8.666666666666666
+        },
+        {
+          "benchmark": "scifact",
+          "arm": "C0",
+          "n": 40,
+          "statuses": {
+            "failed": 33,
+            "completed": 5,
+            "insufficient_evidence": 2
+          },
+          "answer_f1": null,
+          "label_accuracy": 0.025,
+          "evidence_f1": null,
+          "sentence_label_micro_f1": 0.0,
+          "reported_total_tokens": 272930,
+          "latency_ms_mean": 4465.90000000142,
+          "tool_calls_mean": 15.9
+        },
+        {
+          "benchmark": "qasper",
+          "arm": "C1",
+          "n": 36,
+          "statuses": {
+            "failed": 23,
+            "completed": 13
+          },
+          "answer_f1": 0.08453025852959511,
+          "label_accuracy": null,
+          "evidence_f1": 0.04056437389770723,
+          "sentence_label_micro_f1": null,
+          "reported_total_tokens": 143671,
+          "latency_ms_mean": 4968.194444444735,
+          "tool_calls_mean": 8.666666666666666
+        },
+        {
+          "benchmark": "scifact",
+          "arm": "C1",
+          "n": 40,
+          "statuses": {
+            "failed": 33,
+            "completed": 5,
+            "insufficient_evidence": 2
+          },
+          "answer_f1": null,
+          "label_accuracy": 0.025,
+          "evidence_f1": null,
+          "sentence_label_micro_f1": 0.0,
+          "reported_total_tokens": 294480,
+          "latency_ms_mean": 4755.9249999969325,
+          "tool_calls_mean": 15.9
+        }
+      ],
+      "arm_costs": [
+        {
+          "arm": "C0",
+          "n": 76,
+          "statuses": {
+            "failed": 59,
+            "completed": 15,
+            "insufficient_evidence": 2
+          },
+          "reported_total_tokens": 366964,
+          "reported_total_tokens_mean": 4828.473684210527,
+          "parent_latency_ms_mean": 4149.605263158216,
+          "tool_calls_mean": 12.473684210526315
+        },
+        {
+          "arm": "C1",
+          "n": 76,
+          "statuses": {
+            "failed": 56,
+            "completed": 18,
+            "insufficient_evidence": 2
+          },
+          "reported_total_tokens": 438151,
+          "reported_total_tokens_mean": 5765.144736842105,
+          "parent_latency_ms_mean": 4856.47368420905,
+          "tool_calls_mean": 12.473684210526315
+        }
+      ],
+      "failure_rate_absolute_drop": 0.039473684210526314,
+      "reported_token_growth": 0.19398905614719686,
+      "parent_latency_growth": 0.17034594286032023,
+      "context_default_enabled": false,
+      "context_decision": "rejected_as_default",
+      "historical_runtime_code_sha256": "80b601c2046099d23d55ddb7ddf015dc3b85e4070b528c16e20fda4422efb481"
+    }
+  },
+  "answer_model_adaptation": {
+    "model": {
+      "id": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "base_format": "BF16 safetensors; not quantized",
+      "adaptation": "unmerged FP32 LoRA on same BF16 base",
+      "base_sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe",
+      "adapter_sha256": "9f9f5ad54014d538c0818d65fca2717161399245cffaf6bdd839978230565d32"
+    },
+    "split_counts": {
+      "train_examples": 500,
+      "train_papers": 360,
+      "dev_examples": 50,
+      "dev_papers": 50,
+      "test_examples": 50,
+      "test_papers": 50
+    },
+    "selected_step": 96,
+    "lora": {
+      "r": 8,
+      "lora_alpha": 16,
+      "lora_dropout": 0.05,
+      "bias": "none",
+      "target_modules": [
+        "q_proj",
+        "o_proj",
+        "k_proj",
+        "v_proj"
+      ]
+    },
+    "trainable_parameters": 1081344,
+    "training_accepted": {
+      "epochs": 3,
+      "example_instances": 1500,
+      "optimizer_calls": 96,
+      "positive_logged_learning_rate_calls": 95
+    },
+    "test": [
+      {
+        "arm": "P0",
+        "n": 50,
+        "fixed_denominator": 50,
+        "answer_f1": 0.06015132279844515,
+        "evidence_f1": 0.026969696969696966,
+        "json_parse_rate": 0.72,
+        "protocol_pass_rate": 0.32,
+        "truncation_rate": 0.08,
+        "normal_failure_rate": 0.68,
+        "runtime_failure_rate": 0.0,
+        "abstention_rate": 0.0,
+        "input_tokens_mean": 1987.08,
+        "output_tokens_mean": 114.02,
+        "latency_seconds_mean": 2.68956000000122
+      },
+      {
+        "arm": "P1",
+        "n": 50,
+        "fixed_denominator": 50,
+        "answer_f1": 0.3533121203197323,
+        "evidence_f1": 0.10800000000000001,
+        "json_parse_rate": 1.0,
+        "protocol_pass_rate": 1.0,
+        "truncation_rate": 0.0,
+        "normal_failure_rate": 0.0,
+        "runtime_failure_rate": 0.0,
+        "abstention_rate": 0.0,
+        "input_tokens_mean": 1987.08,
+        "output_tokens_mean": 31.28,
+        "latency_seconds_mean": 1.2872000000014667
+      }
+    ],
+    "test_strata_diagnostic_only": [
+      {
+        "state": "P0_failed_P1_passed",
+        "n": 34,
+        "weight_in_main_50": 0.68,
+        "P0_answer_f1": 0.0,
+        "P1_answer_f1": 0.3672045159690753,
+        "answer_f1_within_stratum_delta": 0.3672045159690753,
+        "answer_f1_contribution_to_main_delta": 0.2496990708589712,
+        "P0_evidence_f1": 0.0,
+        "P1_evidence_f1": 0.1196078431372549,
+        "evidence_f1_within_stratum_delta": 0.1196078431372549,
+        "evidence_f1_contribution_to_main_delta": 0.08133333333333333
+      },
+      {
+        "state": "both_complete_protocol_pass",
+        "n": 16,
+        "weight_in_main_50": 0.32,
+        "P0_answer_f1": 0.18797288374514107,
+        "P1_answer_f1": 0.32379077956487856,
+        "answer_f1_within_stratum_delta": 0.13581789581973747,
+        "answer_f1_contribution_to_main_delta": 0.043461726662315986,
+        "P0_evidence_f1": 0.08428030303030302,
+        "P1_evidence_f1": 0.08333333333333333,
+        "evidence_f1_within_stratum_delta": -0.0009469696969696979,
+        "evidence_f1_contribution_to_main_delta": -0.0003030303030303033
+      }
+    ],
+    "paired_answer_f1_delta": 0.2931607975212872,
+    "paired_evidence_f1_delta": 0.08103030303030304,
+    "test_execution_fingerprint": "27eaeb4bb28829f3927154255b77fd00b7a3c55a243a609a3a9be9ee6505feee",
+    "evidence_limit": "Full historical input tensors and per-operation GPU dtypes were not persisted; no bitwise execution-equivalence claim.",
+    "official_unanswerable_test_count": 4,
+    "P1_official_unanswerable_answered_count": 4,
+    "DPO_trained": false,
+    "GRPO_trained": false,
+    "scope": "Answer module only, not full Agent; unrelated scores must not be merged.",
+    "bootstrap": {
+      "paper_clusters": 50,
+      "replicates": 2000,
+      "seed": 20261011,
+      "paired_answer_f1_delta_95pct_percentile": [
+        0.191465426391367,
+        0.4018726852303125
+      ],
+      "limitation": "conditional on this sample and one training seed, not universal effectiveness"
+    }
+  },
+  "public_demo": {
+    "mock_runtime": "Synthetic CPU actor; not benchmark inference.",
+    "historical_replay": "Sanitized read-only historical events; not a new run.",
+    "model_weights_included": false,
+    "benchmark_gold_included": false,
+    "raw_predictions_included": false,
+    "internal_audits_included": false
+  },
+  "cross_study_data_boundary": {
+    "overlap_with_formal_v1_selected_papers": 0,
+    "v2_test_paper_overlap_with_formal_v1_tasks": 0,
+    "v2_test_original_question_id_overlap_with_formal_v1_tasks": 0,
+    "v2_test_papers_present_in_v1_stored_training_corpus": 50,
+    "interpretation": "Different official task splits; same public source archive/storage lineage. Corpus possession does not prove formal model-task exposure. Pretraining and semantic leakage remain unknown."
+  }
+}

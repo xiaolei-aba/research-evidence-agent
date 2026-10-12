@@ -1,0 +1,733 @@
+{
+  "public_id": "engineering_process_restart",
+  "source_kind": "engineering_mock_history",
+  "notice": "Historical CPU engineering mock recovery; not a real model or production recovery rate.",
+  "events": [
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "start",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 1,
+        "completed_steps_count": 0,
+        "memory_size": 0,
+        "source_event_count": 0,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Runtime",
+      "event": "task_started",
+      "status": "running",
+      "metadata": {
+        "stage": "start",
+        "source_record": "agent_trace",
+        "source_event_index": 0,
+        "duration_ms": 0,
+        "timing_basis": "operation_duration_only"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "plan",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 2,
+        "completed_steps_count": 1,
+        "memory_size": 0,
+        "source_event_count": 1,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Planner",
+      "event": "token_budget_requested",
+      "status": "running",
+      "metadata": {
+        "stage": "plan",
+        "source_record": "agent_trace",
+        "source_event_index": 1,
+        "duration_ms": 0,
+        "timing_basis": "operation_duration_only",
+        "native_input_tokens": 601,
+        "requested_reservation_tokens": 1113,
+        "counter_is_exact": false
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Planner",
+      "event": "token_budget_accepted",
+      "status": "success",
+      "metadata": {
+        "stage": "plan",
+        "source_record": "agent_trace",
+        "source_event_index": 2,
+        "duration_ms": 0,
+        "timing_basis": "operation_duration_only",
+        "native_input_tokens": 601,
+        "requested_reservation_tokens": 1113,
+        "reserved_tokens": 1113,
+        "counter_is_exact": false
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "plan",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 3,
+        "completed_steps_count": 1,
+        "memory_size": 0,
+        "source_event_count": 3,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Planner",
+      "event": "model_completed",
+      "status": "success",
+      "metadata": {
+        "stage": "plan",
+        "source_record": "agent_trace",
+        "source_event_index": 3,
+        "duration_ms": 16.00000000325963,
+        "timing_basis": "operation_duration_only"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "plan",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 4,
+        "completed_steps_count": 1,
+        "memory_size": 0,
+        "source_event_count": 4,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "task",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 5,
+        "completed_steps_count": 2,
+        "memory_size": 0,
+        "source_event_count": 4,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Runtime",
+      "event": "task_stage_started",
+      "status": "running",
+      "metadata": {
+        "stage": "task",
+        "source_record": "agent_trace",
+        "source_event_index": 4,
+        "duration_ms": 0,
+        "timing_basis": "operation_duration_only"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "search",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 6,
+        "completed_steps_count": 3,
+        "memory_size": 0,
+        "source_event_count": 5,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "search",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 7,
+        "completed_steps_count": 3,
+        "memory_size": 0,
+        "source_event_count": 5,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Tool",
+      "event": "tool_attempt_started",
+      "status": "running",
+      "metadata": {
+        "stage": "search",
+        "source_record": "agent_trace",
+        "source_event_index": 5,
+        "duration_ms": 0.0,
+        "timing_basis": "operation_duration_only",
+        "physical_attempt": 1
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Tool",
+      "event": "tool_attempt_completed",
+      "status": "success",
+      "metadata": {
+        "stage": "search",
+        "source_record": "agent_trace",
+        "source_event_index": 6,
+        "duration_ms": 16.00000000325963,
+        "timing_basis": "operation_duration_only",
+        "physical_attempt": 1,
+        "document_count": 1
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Tool",
+      "event": "tool_completed",
+      "status": "success",
+      "metadata": {
+        "stage": "search",
+        "source_record": "agent_trace",
+        "source_event_index": 7,
+        "duration_ms": 16.00000000325963,
+        "timing_basis": "operation_duration_only"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "search",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 8,
+        "completed_steps_count": 3,
+        "memory_size": 0,
+        "source_event_count": 8,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "read",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 9,
+        "completed_steps_count": 4,
+        "memory_size": 0,
+        "source_event_count": 8,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "read",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 10,
+        "completed_steps_count": 4,
+        "memory_size": 0,
+        "source_event_count": 8,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Tool",
+      "event": "tool_attempt_started",
+      "status": "running",
+      "metadata": {
+        "stage": "read",
+        "source_record": "agent_trace",
+        "source_event_index": 8,
+        "duration_ms": 0.0,
+        "timing_basis": "operation_duration_only",
+        "physical_attempt": 1
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Tool",
+      "event": "tool_attempt_completed",
+      "status": "success",
+      "metadata": {
+        "stage": "read",
+        "source_record": "agent_trace",
+        "source_event_index": 9,
+        "duration_ms": 0.0,
+        "timing_basis": "operation_duration_only",
+        "physical_attempt": 1,
+        "document_count": 1
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Tool",
+      "event": "tool_completed",
+      "status": "success",
+      "metadata": {
+        "stage": "read",
+        "source_record": "agent_trace",
+        "source_event_index": 10,
+        "duration_ms": 0.0,
+        "timing_basis": "operation_duration_only"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "read",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 11,
+        "completed_steps_count": 4,
+        "memory_size": 0,
+        "source_event_count": 11,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "read",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 12,
+        "completed_steps_count": 5,
+        "memory_size": 0,
+        "source_event_count": 11,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "select",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 13,
+        "completed_steps_count": 6,
+        "memory_size": 0,
+        "source_event_count": 11,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Memory",
+      "event": "evidence_selected",
+      "status": "success",
+      "metadata": {
+        "stage": "select",
+        "source_record": "agent_trace",
+        "source_event_index": 11,
+        "duration_ms": 0,
+        "timing_basis": "operation_duration_only",
+        "selected_count": 1
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Memory",
+      "event": "evidence_stored",
+      "status": "success",
+      "metadata": {
+        "stage": "select",
+        "source_record": "agent_trace",
+        "source_event_index": 12,
+        "duration_ms": 0,
+        "timing_basis": "operation_duration_only"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Runtime",
+      "event": "task_stage_completed",
+      "status": "success",
+      "metadata": {
+        "stage": "task",
+        "source_record": "agent_trace",
+        "source_event_index": 13,
+        "duration_ms": 0,
+        "timing_basis": "operation_duration_only"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "task",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 14,
+        "completed_steps_count": 7,
+        "memory_size": 1,
+        "source_event_count": 14,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Runtime",
+      "event": "process_exit_injected",
+      "status": "failed",
+      "metadata": {
+        "stage": "task",
+        "source_record": "failure_marker",
+        "error_category": "ProcessRestart",
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_restored",
+      "status": "recovered",
+      "metadata": {
+        "stage": "recovery",
+        "source_record": "recovery_report",
+        "checkpoint_verified": true,
+        "completed_steps_count": 7,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "answer",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 15,
+        "completed_steps_count": 8,
+        "memory_size": 1,
+        "source_event_count": 14,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Answer",
+      "event": "token_budget_requested",
+      "status": "running",
+      "metadata": {
+        "stage": "answer",
+        "source_record": "agent_trace",
+        "source_event_index": 14,
+        "duration_ms": 0,
+        "timing_basis": "operation_duration_only",
+        "native_input_tokens": 1027,
+        "requested_reservation_tokens": 1539,
+        "counter_is_exact": false
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Answer",
+      "event": "token_budget_accepted",
+      "status": "success",
+      "metadata": {
+        "stage": "answer",
+        "source_record": "agent_trace",
+        "source_event_index": 15,
+        "duration_ms": 0,
+        "timing_basis": "operation_duration_only",
+        "native_input_tokens": 1027,
+        "requested_reservation_tokens": 1539,
+        "reserved_tokens": 2652,
+        "counter_is_exact": false
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "answer",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 16,
+        "completed_steps_count": 8,
+        "memory_size": 1,
+        "source_event_count": 16,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Answer",
+      "event": "model_completed",
+      "status": "success",
+      "metadata": {
+        "stage": "answer",
+        "source_record": "agent_trace",
+        "source_event_index": 16,
+        "duration_ms": 16.00000000325963,
+        "timing_basis": "operation_duration_only"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "answer",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 17,
+        "completed_steps_count": 8,
+        "memory_size": 1,
+        "source_event_count": 17,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Critic",
+      "event": "citation_validated",
+      "status": "success",
+      "metadata": {
+        "stage": "critic",
+        "source_record": "agent_trace",
+        "source_event_index": 17,
+        "duration_ms": 0,
+        "timing_basis": "operation_duration_only"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "critic",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 18,
+        "completed_steps_count": 9,
+        "memory_size": 1,
+        "source_event_count": 18,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Critic",
+      "event": "token_budget_requested",
+      "status": "running",
+      "metadata": {
+        "stage": "critic",
+        "source_record": "agent_trace",
+        "source_event_index": 18,
+        "duration_ms": 0,
+        "timing_basis": "operation_duration_only",
+        "native_input_tokens": 1586,
+        "requested_reservation_tokens": 2098,
+        "counter_is_exact": false
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Critic",
+      "event": "token_budget_accepted",
+      "status": "success",
+      "metadata": {
+        "stage": "critic",
+        "source_record": "agent_trace",
+        "source_event_index": 19,
+        "duration_ms": 0,
+        "timing_basis": "operation_duration_only",
+        "native_input_tokens": 1586,
+        "requested_reservation_tokens": 2098,
+        "reserved_tokens": 4750,
+        "counter_is_exact": false
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "critic",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 19,
+        "completed_steps_count": 9,
+        "memory_size": 1,
+        "source_event_count": 20,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Critic",
+      "event": "model_completed",
+      "status": "success",
+      "metadata": {
+        "stage": "critic",
+        "source_record": "agent_trace",
+        "source_event_index": 20,
+        "duration_ms": 15.000000013969839,
+        "timing_basis": "operation_duration_only"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "critic",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 20,
+        "completed_steps_count": 9,
+        "memory_size": 1,
+        "source_event_count": 21,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "decide",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 21,
+        "completed_steps_count": 10,
+        "memory_size": 1,
+        "source_event_count": 21,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "finish",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 22,
+        "completed_steps_count": 11,
+        "memory_size": 1,
+        "source_event_count": 21,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Runtime",
+      "event": "task_completed",
+      "status": "success",
+      "metadata": {
+        "stage": "complete",
+        "source_record": "agent_trace",
+        "source_event_index": 21,
+        "duration_ms": 534.0278186486103,
+        "timing_basis": "operation_duration_only",
+        "terminal_status": "completed"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Checkpoint",
+      "event": "checkpoint_saved",
+      "status": "success",
+      "metadata": {
+        "stage": "finish",
+        "source_record": "checkpoint_snapshot",
+        "checkpoint_number": 23,
+        "completed_steps_count": 11,
+        "memory_size": 1,
+        "source_event_count": 22,
+        "checkpoint_verified": true,
+        "timing_basis": "unrecorded"
+      }
+    },
+    {
+      "timestamp": null,
+      "component": "Runtime",
+      "event": "recovery_verified",
+      "status": "recovered",
+      "metadata": {
+        "stage": "complete",
+        "source_record": "recovery_report",
+        "terminal_status": "completed",
+        "replayed_steps": 0,
+        "lost_steps": 0,
+        "duplicate_tool_calls": 0,
+        "verified_snapshot_count": 23,
+        "mechanism_checks_passed": true,
+        "real_llm_used": false,
+        "timing_basis": "unrecorded"
+      }
+    }
+  ]
+}

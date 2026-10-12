@@ -1,8 +1,6 @@
 ResearchEvidence Agent
 Copyright 2026 xiaolei-aba for rights-cleared project contributions.
 Project contributions are licensed under Apache-2.0; upstream rights are retained.
-Implementation, tests, execution and reporting involved Codex assistance;
-this does not assert independent handwritten authorship of the entire codebase.
 
 This project adapts/reimplements QASPER and SciFact scoring rules for a frozen
 project task schema. Upstream sources and licenses:
@@ -48,3 +46,26 @@ Research dependencies and benchmark acknowledgements (not bundled):
 - SciFact claims/annotations: CC-BY-4.0; abstracts: ODC-BY-1.0; code: Apache-2.0.
   https://github.com/allenai/scifact/blob/68b98a56d93e0f9da0d2aab4e6c3294699a0f72e/LICENSE.md
 No dataset payload, Gold, model weights or backend binaries are redistributed.
+
+Runtime public extension and dashboard:
+- Project-owned durable state, context, tools, trace and presentation contributions:
+  Copyright 2026 xiaolei-aba, Apache-2.0. Historical research outputs are not bundled.
+- Qwen2.5-0.5B-Instruct was used in a separate Answer-model LoRA study; its original
+  Apache-2.0 license remains separate. No base model, tokenizer asset or adapter is
+  included, and the adapted model is not connected to the public dashboard.
+  https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct
+- React and React DOM 19.3.0: MIT, Meta Platforms, Inc. and affiliates.
+  Their full license texts are retained in LICENSES/React-MIT.txt and ReactDOM-MIT.txt.
+  https://github.com/facebook/react
+- Vite 8.3.4 and @vitejs/plugin-react 6.1.2: MIT; installed as build tools only.
+  https://github.com/vitejs/vite
+- FastAPI 0.143.0 and Pydantic 2.14.1: MIT.
+- Uvicorn 0.54.0, Starlette 1.7.0 and HTTPX 0.28.1: BSD-3-Clause.
+- OpenTelemetry API 1.45.1: Apache-2.0.
+  Python dependencies are installed separately from the pinned dependency file;
+  their distributed packages retain upstream license/copyright metadata.
+
+Sanitized historical replay includes only stage/status/category and allowlisted
+numeric metadata. Original question, evidence/paper text, Gold, raw model response,
+private task identifiers and internal source mappings are excluded. A real Dev
+failure excerpt and a CPU Mock recovery excerpt remain distinct sources.

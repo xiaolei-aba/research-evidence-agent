@@ -1,0 +1,62 @@
+[
+  {
+    "document_id": "synthetic-document-1",
+    "source_id": "synthetic-source-1",
+    "title": "Synthetic CPU test fixture 1",
+    "source_url": "https://example.invalid/synthetic/1",
+    "source_version": "fixture-v1",
+    "license": "Apache-2.0",
+    "retrieved_at": "synthetic-not-a-retrieval-time",
+    "sha256": "8be3c149cb0c7a8e40c996d5c8cd23ecd6082ce3d64d801817f2196837beb02d",
+    "section_id": "fixture",
+    "chunk_id": "fixture-1",
+    "evidence_span": {
+      "start": 0,
+      "end": 131,
+      "text": "NF4 is a keyword in this synthetic engineering fixture. Evidence retrieval checkpoint and tool receipt execution are tested on CPU."
+    },
+    "text": "NF4 is a keyword in this synthetic engineering fixture. Evidence retrieval checkpoint and tool receipt execution are tested on CPU.",
+    "document_text": "NF4 is a keyword in this synthetic engineering fixture. Evidence retrieval checkpoint and tool receipt execution are tested on CPU.",
+    "representation": "synthetic_engineering_fixture_not_benchmark"
+  },
+  {
+    "document_id": "synthetic-document-2",
+    "source_id": "synthetic-source-2",
+    "title": "Synthetic CPU test fixture 2",
+    "source_url": "https://example.invalid/synthetic/2",
+    "source_version": "fixture-v1",
+    "license": "Apache-2.0",
+    "retrieved_at": "synthetic-not-a-retrieval-time",
+    "sha256": "33b6d353d417fec2236e980689f16a68d4538312e8c78c830369372db7982aa9",
+    "section_id": "fixture",
+    "chunk_id": "fixture-2",
+    "evidence_span": {
+      "start": 0,
+      "end": 128,
+      "text": "Qwen license is a synthetic query for checkpoint ordering tests. This fixture makes no claim about external model license terms."
+    },
+    "text": "Qwen license is a synthetic query for checkpoint ordering tests. This fixture makes no claim about external model license terms.",
+    "document_text": "Qwen license is a synthetic query for checkpoint ordering tests. This fixture makes no claim about external model license terms.",
+    "representation": "synthetic_engineering_fixture_not_benchmark"
+  },
+  {
+    "document_id": "synthetic-document-3",
+    "source_id": "synthetic-source-3",
+    "title": "Synthetic CPU test fixture 3",
+    "source_url": "https://example.invalid/synthetic/3",
+    "source_version": "fixture-v1",
+    "license": "Apache-2.0",
+    "retrieved_at": "synthetic-not-a-retrieval-time",
+    "sha256": "a56f0d58bb457c9f0cc748c0561c6e7c9eda87384f03939865b86229d88184e0",
+    "section_id": "fixture",
+    "chunk_id": "fixture-3",
+    "evidence_span": {
+      "start": 0,
+      "end": 125,
+      "text": "Qwen license synthetic second evidence. Multiple evidence blocks verify durable ordering during recovery. No model is loaded."
+    },
+    "text": "Qwen license synthetic second evidence. Multiple evidence blocks verify durable ordering during recovery. No model is loaded.",
+    "document_text": "Qwen license synthetic second evidence. Multiple evidence blocks verify durable ordering during recovery. No model is loaded.",
+    "representation": "synthetic_engineering_fixture_not_benchmark"
+  }
+]

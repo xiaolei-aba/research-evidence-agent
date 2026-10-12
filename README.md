@@ -1,106 +1,133 @@
-# ResearchEvidence Agent
+---
+title: ResearchEvidence Agent Runtime
+emoji: 🔎
+colorFrom: green
+colorTo: blue
+sdk: docker
+app_port: 7860
+suggested_hardware: cpu-basic
+license: apache-2.0
+short_description: Agent execution, state, trace and controlled recovery — CPU Mock and sanitized replay
+models: []
+datasets: []
+---
 
-**An evidence-grounded research agent with bounded planning, retrieval and verification for AI technical knowledge.**
+# ResearchEvidence Agent Runtime
 
-This project studies whether a small local LLM benefits from planning, cross-query evidence memory, a critic and bounded replanning. It combines an inspectable BM25 workflow with immutable traces, native token accounting and controlled experiments. The result is deliberately reported in full: source-identity deduplication improved the complex agent relative to its component-off ablation, while the direct retrieval-and-answer baseline remained stronger on both frozen benchmark subsets.
+An Agent Runtime for multi-step research tasks, built around **State, Tool execution, Evidence Memory, Checkpoints and Trace**. It coordinates planning, retrieval, context and answer validation with small models.
 
-The implementation, tests, execution and reporting were developed with Codex assistance. The owner specified the project direction and constraints and reviewed milestones. Individual implementation contributions require confirmation; the project does not claim that all code was independently handwritten. See [development attribution](docs/development_attribution.md).
+Explicit state and operation receipts help diagnose failures and resume eligible work without repeating completed calls. The CPU Demo makes task progress, evidence and recovery visible.
 
-## Start with the CPU demonstration
+[Try the Demo](#demo) · [Architecture](docs/architecture.md) · [Runtime design](docs/runtime_design.md) · [Experiments](docs/experiments.md) · [Limitations](docs/limitations.md) · [Interview notes](docs/interview_notes.md)
 
-Python 3.11 or newer, standard library only:
+## Demo
 
-```bash
-python examples/public_demo.py
-python scripts/verify_cpu.py
+![Runtime dashboard](assets/demo_screenshot.png)
+
+Follow a task from **Planner → Tool → Memory → Context → Answer → Validation**, inspect its State and Trace, then inject a failure and recover from a Checkpoint.
+
+| Mode | What you can explore |
+|---|---|
+| Mock Runtime Demo | Start → Inject Failure → Recover; synthetic evidence and fixed answers, with local state/checkpoint files |
+| Historical Trace Replay | Read-only playback of a recorded Agent Dev failure or a prior CPU Mock process restart |
+
+**Demo boundaries:** this is **Runtime visualization, not a Benchmark**. Mock output is synthetic, not a model result. **Recovery Demo validates Runtime mechanisms, not production recovery rate or SLA.** The dashboard uses a separate CPU Actor; it does not execute the research Agent or call a model API. UI recovery works within the current backend session; playback leaves historical outcomes unchanged.
+
+### Run locally
+
+Use Python 3.11 and Node.js 24. From this release root:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements/demo.lock.txt
+cd runtime_demo/frontend
+npx pnpm@11.25.0 install --frozen-lockfile
+npx pnpm@11.25.0 run build
+cd ../..
+.\.venv\Scripts\python.exe runtime_demo/backend/app.py
 ```
 
-The demonstration uses project-authored synthetic text and a deterministic `MockProvider`. It requires no model, credentials, network or GPU; its output is an engineering example, **not real Agent performance**. The portable tests cover provider errors and retry limits, JSON validation, redaction, provenance, budgets and on/off memory controls. They deny real socket creation during discovery and execution.
+Open **http://127.0.0.1:8001**. macOS/Linux use `.venv/bin/python`. The FastAPI backend serves the React dashboard and streams events through SSE. No model download or GPU is needed. See the [three-minute walkthrough](docs/demo_guide.md#a-three-minute-walkthrough) and [startup guide](runtime_demo/README.md) for development and troubleshooting. Avoid entering private material in the task field.
 
-Installation is optional: both commands use the included `src/` tree directly. Real benchmark execution has a separate scope, described under [reproduction boundaries](docs/public_reproduction.md).
+## Runtime core
+
+| Component | Implemented design |
+|---|---|
+| **State** | `AgentState` keeps the goal, plan, cursor, completed steps, evidence, receipts and remaining budget |
+| **Tool** | Validated BM25 search/read requests, with request intent and outcome receipts |
+| **Memory** | Evidence Store retains source identity, version and locators across task steps |
+| **Context** | Budget-aware selection of whole evidence units; optional and off by default after the matched Dev study |
+| **Checkpoint** | Committed state snapshots and receipt reuse let eligible work resume without repeating committed calls |
+| **Trace** | A complete disk journal, bounded in-memory event tail and failure categories support diagnosis |
+| **Agent loop** | Structured planning, answer generation, citation checks and bounded Critic/Replan |
+
+Inspect the core in [`src/deepresearch`](src/deepresearch): [`state.py`](src/deepresearch/runtime/state.py), [`resumable_agent.py`](src/deepresearch/runtime/resumable_agent.py), [`context.py`](src/deepresearch/runtime/context.py) and [`trace_analysis.py`](src/deepresearch/runtime/trace_analysis.py). Checkpoint recovery preserves saved terminal outcomes, including failures; uncertain calls without receipts block automatic continuation. The runnable dashboard demonstrates these concepts through its separate Actor.
 
 ## Architecture
 
 ```mermaid
-flowchart LR
-    Q[Question] --> P[Planner or single task]
-    P --> T[Allow-listed search and read]
-    T --> R[BM25 and source reader]
-    R --> M[Evidence selection and memory]
-    M --> A[Structured answer]
-    A --> V[Source and citation verification]
-    V --> C[Same-model critic]
-    C --> O[Answer, insufficient, or failed]
-    C -->|At most one replan| P
-    P -.-> B[Token and deadline budgets]
-    A -.-> B
-    T -.-> L[Persistent trace and artifact SHA]
-    V -.-> L
+flowchart TD
+    U[User Task] --> R[Agent Runtime]
+    R --> P[Planner orchestration]
+    P --> T[Tool Executor]
+    T --> M[Evidence Memory]
+    M --> C[Context Manager - optional]
+    C --> A[Answer request]
+    A --> V[Critic / Validation]
+    V --> F[Terminal result]
+    V -. bounded replan .-> P
+    L[LLM Provider / model] -. generation .-> P
+    L -. generation .-> A
+    L -. critique .-> V
+    S[Agent State / Checkpoints] -. commit and resume .-> R
+    P & T & M & C & A & V -. events .-> TR[Trace Recorder]
+    TR --> D[Failure Dashboard / Eval]
 ```
 
-- **Retrieval:** deterministic BM25, `k1=1.2`, `b=0.75`, top K=5. QASPER retrieves paragraphs within the supplied paper; SciFact retrieves sentences across the corpus. No trained embedding model or reranker is claimed.
-- **Memory:** preserves document, source URL, version, chunk, text, hashes, spans and task associations. B4 deduplicates exact source identities while retaining distinct sources and first-occurrence evidence IDs.
-- **Verification:** checks citation IDs, source registry, text spans and hashes. The critic uses the same 1.5B model as answering; it is workflow feedback, not an independent evaluation judge.
-- **Execution:** an OpenAI-compatible provider, environment-only credentials, bounded transport retries, structured-output validation and native usage accounting. Tools are allow-listed; source text cannot authorize shell execution.
-- **Resource control:** records system Available/Committed memory separately from process Private Bytes/Working Set and GPU device counters. The historical research runtime preserves its 1.25 GiB Available RAM floor and stops only owned computation.
+The **model** generates plans, answers and optional critique. The **Runtime** owns execution, tools, evidence, budgets and committed state. **Trace/Eval** makes outcomes inspectable. State, Checkpoints and Trace span the task loop. See the [layered architecture guide](docs/architecture.md) for the lifecycle and responsibilities.
 
-## Experiment design
+## Research results
 
-| Stage | Design | Observations |
-|---|---|---:|
-| R0 | BM25 retrieval reference, no LLM | Excluded from total |
-| Original Dev | 36 QASPER + 40 SciFact tasks under B1/B2/B3 | 228 |
-| B4 Dev | Same Dev tasks, source-identity deduplication on/off | 152 |
-| B5 | Fixed-ID system/context engineering diagnostics | 30 unique observations |
-| Frozen Final | 108 QASPER + 100 SciFact tasks under B1/B4/B4off | 624 |
-| Total | Terminal task observations, including failures | **1034** |
+### Full-Agent study
 
-B1 performs direct retrieval and answering. B2 adds a planner; B3 adds cross-round memory, a critic and at most one replan. B4 changes only the preregistered source-identity deduplication factor relative to B4off. The existing component was selected from complete Dev before Final; prompts, output JSON, evidence selection and budgets stayed fixed. Expected dictionary lookup is O(1), while each insertion costs O(hashed UTF-8 bytes + task-association count).
+Qwen2.5-1.5B-Instruct Q4_K_M with llama.cpp. B1–B3 assess retrieval, Planner, Memory and Critic/Replan; B4/B4off isolate source-identity deduplication; B5 is a small engineering diagnostic. The study saved **1,034 task observations**, including multiple configurations on shared questions.
 
-These are observation counts, not unique-question counts or model-call counts. Existing terminal failures were retained rather than resampled until correct. Development selection and frozen Final remained separate. See [evaluation protocol and denominators](docs/public_evaluation.md) and [B4 implementation](docs/b4_algorithm_explained.md).
+| Frozen Final, all tasks per arm | B1 | B4 | B4off |
+|---|---:|---:|---:|
+| QASPER Answer F1, N=108 | 0.1672 | 0.1345 | 0.0747 |
+| SciFact label accuracy, N=100 | 0.1000 | 0.0200 | 0.0000 |
 
-## Frozen Final results
+**B4 improved over B4off but remained below B1**, and used more reported tokens than B4off. Failures stay in each metric's fixed denominator; completion is not correctness. A later matched 152-observation Dev extension studied state/Trace and optional Context selection. Context remains **off by default** after its quality/cost comparison; this extension is a Dev result.
 
-The formal model was official Qwen2.5-1.5B-Instruct Q4_K_M with llama.cpp b9757, temperature 0, seed 11 and explicit `--cache-ram 0`. Standard context/input/output caps were 4096/3072/512 tokens, worst-case total reservation 24000, logical model calls 8, tools 18, subtasks 4, replans 1 and task deadline 120 seconds. No fine-tuning was performed.
+### Independent SFT study
 
-| Benchmark | System | Fixed n | Runtime failures | Insufficient evidence | Answer F1 / Label Accuracy | Evidence F1 / Sentence-label micro F1 |
-|---|---|---:|---:|---:|---:|---:|
-| QASPER | B1 | 108 | 39 | 0 | **0.1672** | **0.1345** |
-| QASPER | B4 | 108 | 53 | 0 | 0.1345 | 0.1221 |
-| QASPER | B4off | 108 | 68 | 0 | 0.0747 | 0.0871 |
-| SciFact | B1 | 100 | 3 | 0 | **0.1000** | **0.0524** |
-| SciFact | B4 | 100 | 71 | 13 | 0.0200 | 0.0141 |
-| SciFact | B4off | 100 | 89 | 3 | 0.0000 | 0.0000 |
+Qwen2.5-0.5B-Instruct BF16 base with LoRA SFT: 500 training samples from 360 papers; Dev/Test each contain 50 papers/50 tasks. The selected adapter was compared once with the base on frozen Test inputs.
 
-Failures remain in the fixed quality denominators: 323 runtime failures and 16 insufficient-evidence outcomes are recorded separately. These are selected-subset results, not full benchmark leaderboard scores; the two benchmarks are not averaged into one accuracy.
+| Independent Test, all 50 tasks per arm | Base P0 | LoRA P1 |
+|---|---:|---:|
+| Answer F1 | 0.0602 | 0.3533 |
+| Evidence F1 | 0.0270 | 0.1080 |
+| Complete protocol pass | 16/50 | 50/50 |
 
-QASPER B4−B4off Answer F1 was +0.0598 absolute, with paired cluster interval [0.0246,0.1016]. SciFact label accuracy was +0.0200, with interval [0.0000,0.0510]. The preregistered analysis used 2000 cluster-bootstrap draws, seed 20261009 and 108 paper clusters / 95 source-connected clusters. **B4 remained below B1**, and a single-seed public subset does not establish a universal gain.
+**SFT is a separate Answer-module experiment.** The adapter has not been integrated into or evaluated as the full Agent. The two studies use different models and evaluation contracts; their metrics cannot be merged or directly ranked. Protocol pass and evidence overlap do not establish human semantic correctness.
 
-| Benchmark | System | Reported input + output tokens | Mean tool calls | Warm task latency P50 / P95 (ms) |
-|---|---|---:|---:|---:|
-| QASPER | B1 | 233696 | 5.96 | 2460.5 / 3062 |
-| QASPER | B4 | 421391 | 8.81 | 3156 / 3734 |
-| QASPER | B4off | 292422 | 8.76 | 2250 / 3734 |
-| SciFact | B1 | 140277 | 6.00 | 703 / 2203 |
-| SciFact | B4 | 714763 | 16.14 | 3203 / 4390 |
-| SciFact | B4off | 684550 | 16.38 | 3125 / 3953 |
+See [Experiments](docs/experiments.md) for denominators, costs, negative results and evaluation design, and [results_summary.json](docs/results_summary.json) for full-precision aggregates.
 
-Token totals include sent failed attempts and exclude requests rejected before sending; conservative reservations are not actual usage. Warm task latency includes worker startup, corpus preparation and tokenizer RPC, with cold load separate. Smaller repeated contexts allowed more calls to proceed and did not yield uniform cost reduction. Historical cache-on/off Dev efficiency is stratified. B5 uses only three tasks per benchmark/system, and 27 historical per-row cold-load values remain null because their provenance is ambiguous.
+## Docker / Hugging Face Space
 
-Exact aggregate results, configuration metadata and the original local audit SHA are retained in [release evidence](docs/release_evidence.json). Raw predictions, Gold, traces and private machine information are excluded from this release scope.
+The Dockerfile builds the frontend and runs FastAPI as UID 1000 on port `7860`, using CPU web dependencies. To try it with Docker installed:
 
-## Reproduction and limitations
+```bash
+docker build -t research-evidence-runtime-demo .
+docker run --rm -p 127.0.0.1:7860:7860 research-evidence-runtime-demo
+```
 
-The included source supports inspection and portable synthetic engineering checks. It does **not independently recreate the exact 624 Final observations**: the private research controller, frozen task identities/Gold, raw data, model weights, binaries, environments and original research Git history are not bundled. Restoring public upstream archives alone does not reconstruct the exact selected task set. Any later task-manifest or extraction release requires its own reviewed scope.
+**Status:** Docker Space configuration prepared; no hosted Space deployed. **container build not locally verified**. See [deployment limits](docs/limitations.md#deployment-and-storage) and the [Space setup guide](runtime_demo/README.md) before hosting.
 
-QASPER uses selected text-locatable official-test questions, one per paper. SciFact Final uses selected public official-dev Gold, not the hidden official test. Public pretraining exposure is unknown, only one model/seed was studied, and the original AI/ML vertical corpus was not evaluated in this formal comparison. Scientific QA and claim verification are proxy tasks for the intended knowledge-base setting.
+## Scope and limitations
 
-Citation Support Rate and Unsupported Claim Rate are **null**: no independent human output-semantic review was completed. Evidence F1, source-span validity and ID membership cannot substitute for semantic citation accuracy. The same-model critic is neither Gold nor a second reviewer.
+The public package contains the Runtime core, CPU Demo, selected tests, sanitized replay and aggregate research results. Benchmark Gold and original predictions are excluded, so historical aggregate scores cannot be independently recomputed from this snapshot. [Limitations](docs/limitations.md) covers recovery guarantees, citation validation, experimental scope and deployment constraints.
 
-## License and acknowledgements
+## License and attribution
 
-Project contributions are licensed under [Apache-2.0](LICENSE). Copyright attribution: **xiaolei-aba**. Third-party notices and scoring ancestry are retained in [NOTICE](NOTICE) and the complete [SQuAD MIT notice](LICENSES/SQuAD-MIT.txt). The project license does not relicense model weights, datasets, paper text or backend/CUDA binaries, which are not bundled.
-
-The public scorer adds the reviewed provenance/modification comment to the unchanged frozen research body; executable AST and scoring behavior are unchanged. See [release manifest](RELEASE_MANIFEST.json) for original and public hashes and [reproduction boundaries](docs/public_reproduction.md).
-
-Upstream origins are recorded in [source lock](data/benchmarks/source_lock.json). The implementation and experiments used Codex assistance; see [authorship boundary](docs/development_attribution.md). Career materials: [Chinese/English resume bullets](docs/resume_bullets.md), [interview guide](docs/interview_guide.md).
+Rights-cleared project contributions use **Apache-2.0**. Third-party rights and attribution are retained in [LICENSE](LICENSE), [NOTICE](NOTICE) and [LICENSES](LICENSES). No model weights, GGUF, LoRA adapter, raw paper text or private logs are bundled.

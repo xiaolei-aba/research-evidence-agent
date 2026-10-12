@@ -1,20 +1,7 @@
-# Benchmark and evaluation boundary
+# Evaluation guide
 
-The experiment total is 1034 terminal task observations: original Dev 228, B4 Dev 152, B5 30, Final 624. A task is observed under several systems; this is not 1034 unique questions. R0 and older 3B exploratory outputs are excluded. Existing success and failure results are SHA-checked and never resampled until correct.
+The current evaluation description is [Experiments](experiments.md): benchmark sources and splits, B1–B5 and frozen Final comparisons, fixed task denominators, operational failures, evidence metrics, and the independent Answer-only SFT study.
 
-| Dataset | Project Dev | Frozen Final | Retrieval and scoring |
-|---|---|---|---|
-| QASPER | 36 selected official validation questions | 108 selected official test questions, one per paper | BM25 within supplied paper; normalized answer token F1 and frozen evidence-unit F1 |
-| SciFact | 40 selected official train claims | 100 selected public official dev claims | BM25 over full corpus; exact label accuracy and sentence-plus-label micro F1 |
+Full-precision aggregate values are available in [the results summary](results_summary.json). The [legacy Agent aggregate evidence](release_evidence.json) is retained for the earlier release. Neither file contains the original Gold or raw predictions needed to recompute benchmark scores independently.
 
-Frozen subsets are text-locatable and intentionally selected, not official leaderboard distributions. Project Final is held out from project strategy selection; public pretraining exposure is unknown. SciFact hidden test has no public Gold and was not evaluated. Synthetic B0 and portable demonstration fixtures are engineering tests, never real model performance or Final tasks. The earlier AI/ML vertical corpus was not evaluated in this formal comparison.
-
-The frozen scorer is included unchanged in `src/deepresearch/benchmarks/scoring.py`. QASPER answer normalization, supported answer-type handling and reference selection follow the locked implementation. Answer scores average over all fixed tasks. Runtime failures receive zero answer/evidence credit; insufficient-evidence outcomes are separately reported and follow the frozen mapping (QASPER `Unanswerable`, SciFact `ABSTAIN`). They are not universally equivalent to failed predictions. QASPER evidence F1 compares cited paragraph quote strings with the best matching reference evidence set. SciFact sentence-plus-label micro F1 sums frozen correct/retrieved/relevant sentence counts. Missing predictions are errors rather than silently excluded tasks. Recall@5 uses the first five unique IDs in cumulative retrieval order (QASPER units; SciFact units mapped to documents), restricted to eligible tasks with nonempty Gold evidence; eligible and ineligible denominators are recorded in the aggregate JSON. Final citation ID membership is a separate identity check.
-
-Citation Support Rate would require independently reviewed supported citation-claim pairs divided by reviewed citation-claim pairs. Unsupported Claim Rate would require independently reviewed unsupported factual claims divided by reviewed factual claims. There is no such completed output review, so both are null. Structural citation verification alone does not fill these fields. No fictitious second reviewer is claimed.
-
-Tool Calls count executed search/read calls, with cache hits separate; model calls and HTTP attempts are separate counters. Token Usage reports native provider usage, including failed sent attempts; reservations are not usage and missing usage is not zero. Rejected requests can consume zero sent tokens while still failing. Latency is parent worker-launch-to-exit warm task elapsed time, including preparation and tokenizer RPC; cold load is separate. Resource metrics separate system Available/Committed from process Private Bytes/Working Set and GPU total device use.
-
-B4 was selected using complete Dev and preregistered before Final. Final compares B1/B4/B4off only, with no post-Final tuning. Paired document-connected cluster bootstrap uses 2000 draws, seed 20261009, nearest-rank confidence bounds (`ceil(p*n)-1`); no p-values. Dev intervals are exploratory. Exact released aggregate values and audit SHA are in [release_evidence.json](release_evidence.json).
-
-Official primary sources: [QASPER data card](https://huggingface.co/datasets/allenai/qasper), [QASPER baseline and evaluator](https://github.com/allenai/qasper-led-baseline), [SciFact](https://github.com/allenai/scifact). The source lock preserves original URLs, revisions, bytes and hashes without dataset contents. Code, benchmark data, paper text and model licenses are separate rights boundaries; obtaining data from an official URL does not authorize arbitrary redistribution.
+See [Limitations](limitations.md) for reproducibility, semantic citation review, and demonstration boundaries. This page preserves the legacy documentation URL.
